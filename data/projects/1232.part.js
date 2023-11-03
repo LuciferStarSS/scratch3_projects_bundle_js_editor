@@ -1,0 +1,4 @@
+/* 1232 */
+ (function(module, exports, __webpack_require__) {
+eval("var baseGetTag = __webpack_require__(520),\n    isArray = __webpack_require__(712),\n    isObjectLike = __webpack_require__(474);\n/** `Object#toString` result references. */\nvar stringTag = '[object String]';\n/**\n * Checks if `value` is classified as a `String` primitive or object.\n *\n * @static\n * @since 0.1.0\n * @memberOf _\n * @category Lang\n * @param {*} value The value to check.\n * @returns {boolean} Returns `true` if `value` is a string, else `false`.\n * @example\n *\n * _.isString('abc');\n * // => true\n *\n * _.isString(1);\n * // => false\n */\nfunction isString(value) {\n  return typeof value == 'string' ||\n    (!isArray(value) && isObjectLike(value) && baseGetTag(value) == stringTag);\n}\nmodule.exports = isString;\n// ./~/lodash/isString.js\n// module id = 1232\n// module chunks = 0\n//# sourceURL=scratch:///./~/lodash/isString.js?");
+ })

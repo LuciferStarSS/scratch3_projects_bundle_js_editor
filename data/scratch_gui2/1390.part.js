@@ -1,0 +1,1 @@
+/* 1390 */\n (function(module, exports, __webpack_require__) {\n\nvar toObject = __webpack_require__(232);\nvar $getPrototypeOf = __webpack_require__(507);\n__webpack_require__(321)('getPrototypeOf', function () {\n  return function getPrototypeOf(it) {\n    return $getPrototypeOf(toObject(it));\n  };\n});\n })

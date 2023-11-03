@@ -1,0 +1,5 @@
+/* 778 */
+ (function(module, exports, __webpack_require__) {
+"use strict";
+eval("\nvar ArrayReader = __webpack_require__(776);\nvar utils = __webpack_require__(165);\nfunction Uint8ArrayReader(data) {\n    ArrayReader.call(this, data);\n}\nutils.inherits(Uint8ArrayReader, ArrayReader);\n/**\n * @see DataReader.readData\n */\nUint8ArrayReader.prototype.readData = function(size) {\n    this.checkOffset(size);\n    if(size === 0) {\n        // in IE10, when using subarray(idx, idx), we get the array [0x00] instead of [].\n        return new Uint8Array(0);\n    }\n    var result = this.data.subarray(this.zero + this.index, this.zero + this.index + size);\n    this.index += size;\n    return result;\n};\nmodule.exports = Uint8ArrayReader;\n// ./~/jszip/lib/reader/Uint8ArrayReader.js\n// module id = 778\n// module chunks = 0\n//# sourceURL=scratch:///./~/jszip/lib/reader/Uint8ArrayReader.js?");
+ })

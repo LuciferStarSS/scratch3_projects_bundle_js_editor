@@ -1,0 +1,1 @@
+/* 508 */\n (function(module, exports, __webpack_require__) {\nmodule.exports = !__webpack_require__(119) && !__webpack_require__(158)(function () {\n  return Object.defineProperty(__webpack_require__(322)('div'), 'a', { get: function () { return 7; } }).a != 7;\n});\n })

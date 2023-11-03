@@ -1,0 +1,1 @@
+/* 1112 */\n (function(module, exports, __webpack_require__) {\nvar $export = __webpack_require__(1113)\n  , $task   = __webpack_require__(1121);\n$export($export.G + $export.B, {\n  setImmediate:   $task.set,\n  clearImmediate: $task.clear\n});\n })

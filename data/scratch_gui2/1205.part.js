@@ -1,0 +1,1 @@
+/* 1205 */\n (function(module, exports, __webpack_require__) {\nexports = module.exports = __webpack_require__(9)(false);\n\nexports.push([module.i, \".box_box_2jjDp {\\n}\\n\", \"\"]);\n\nexports.locals = {\n\t\"box\": \"box_box_2jjDp\"\n};\n })

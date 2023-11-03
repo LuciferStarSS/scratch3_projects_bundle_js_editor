@@ -1,0 +1,4 @@
+/* 1231 */
+ (function(module, exports, __webpack_require__) {
+eval("var baseIsRegExp = __webpack_require__(1218),\n    baseUnary = __webpack_require__(1220),\n    nodeUtil = __webpack_require__(1224);\n/* Node.js helper references. */\nvar nodeIsRegExp = nodeUtil && nodeUtil.isRegExp;\n/**\n * Checks if `value` is classified as a `RegExp` object.\n *\n * @static\n * @memberOf _\n * @since 0.1.0\n * @category Lang\n * @param {*} value The value to check.\n * @returns {boolean} Returns `true` if `value` is a regexp, else `false`.\n * @example\n *\n * _.isRegExp(/abc/);\n * // => true\n *\n * _.isRegExp('/abc/');\n * // => false\n */\nvar isRegExp = nodeIsRegExp ? baseUnary(nodeIsRegExp) : baseIsRegExp;\nmodule.exports = isRegExp;\n// ./~/lodash/isRegExp.js\n// module id = 1231\n// module chunks = 0\n//# sourceURL=scratch:///./~/lodash/isRegExp.js?");
+ })

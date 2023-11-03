@@ -1,0 +1,1 @@
+/* 63 */\n (function(module, exports) {\n/**\n * Block argument types\n * @enum {string}\n */\nvar ArgumentType = {\n \n  ANGLE: 'angle',\n \n  BOOLEAN: 'Boolean',\n \n  COLOR: 'color',\n \n  NUMBER: 'number',\n \n  STRING: 'string',\n \n  MATRIX: 'matrix',\n \n  NOTE: 'note',\n \n  IMAGE: 'image'\n};\nmodule.exports = ArgumentType;\n })

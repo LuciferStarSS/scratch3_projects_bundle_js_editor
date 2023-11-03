@@ -1,0 +1,1 @@
+/* 533 */\n (function(module, exports, __webpack_require__) {\nvar ScratchStorage = __webpack_require__(1210);\n/**\n * Export for use with NPM & Node.js.\n * @type {ScratchStorage}\n */\nmodule.exports = ScratchStorage;\n })

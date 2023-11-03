@@ -1,0 +1,5 @@
+/* 255 */
+ (function(module, exports, __webpack_require__) {
+"use strict";
+eval("\nObject.defineProperty(exports, \"__esModule\", {\n    value: true\n});\nvar PropTypes = __webpack_require__(1);\nvar number = PropTypes.number,\n    string = PropTypes.string,\n    shape = PropTypes.shape;\nvar projectShape = exports.projectShape = shape({\n    id: number,\n    instructions: string,\n    title: string,\n    description: string,\n    author: shape({\n        id: number,\n        username: string\n    }),\n    image: string,\n    history: shape({\n        created: string,\n        modified: string,\n        shared: string\n    }),\n    stats: shape({\n        views: number,\n        loves: number,\n        favorites: number,\n        comments: number,\n        remixes: number\n    }),\n    remix: shape({\n        parent: number,\n        root: number\n    })\n});\n// ./src/views/preview/projectshape.jsx\n// module id = 255\n// module chunks = 0 8\n//# sourceURL=scratch:///./src/views/preview/projectshape.jsx?");
+ })

@@ -1,0 +1,4 @@
+/* 1035 */
+ (function(module, exports, __webpack_require__) {
+eval("var anObject       = __webpack_require__(1028)\n  , IE8_DOM_DEFINE = __webpack_require__(1033)\n  , toPrimitive    = __webpack_require__(1038)\n  , dP             = Object.defineProperty;\nexports.f = __webpack_require__(595) ? Object.defineProperty : function defineProperty(O, P, Attributes){\n  anObject(O);\n  P = toPrimitive(P, true);\n  anObject(Attributes);\n  if(IE8_DOM_DEFINE)try {\n    return dP(O, P, Attributes);\n  } catch(e){ /* empty */ }\n  if('get' in Attributes || 'set' in Attributes)throw TypeError('Accessors not supported!');\n  if('value' in Attributes)O[P] = Attributes.value;\n  return O;\n};\n// ./~/core-js/library/modules/_object-dp.js\n// module id = 1035\n// module chunks = 0\n//# sourceURL=scratch:///./~/core-js/library/modules/_object-dp.js?");
+ })

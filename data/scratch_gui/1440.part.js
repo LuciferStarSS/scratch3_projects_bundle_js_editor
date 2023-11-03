@@ -1,0 +1,1 @@
+/* 1440 */\n (function(module, exports, __webpack_require__) {\n__webpack_require__(1441);\nvar $Object = __webpack_require__(53).Object;\nmodule.exports = function getOwnPropertyDescriptor(it, key) {\n  return $Object.getOwnPropertyDescriptor(it, key);\n};\n })

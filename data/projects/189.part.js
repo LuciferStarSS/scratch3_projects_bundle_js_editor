@@ -1,0 +1,5 @@
+/* 189 */
+ (function(module, exports, __webpack_require__) {
+"use strict";
+eval("\nvar classNames = __webpack_require__(5);\nvar PropTypes = __webpack_require__(1);\nvar React = __webpack_require__(0);\n__webpack_require__(180);\nvar ValidationMessage = function ValidationMessage(props) {\n    return React.createElement(\n        'div',\n        {\n            className: classNames('validation-message', {\n                'validation-error': props.mode === 'error',\n                'validation-info': props.mode === 'info'\n            }, props.className)\n        },\n        props.message\n    );\n};\nValidationMessage.propTypes = {\n    className: PropTypes.string,\n    message: PropTypes.string,\n    mode: PropTypes.string\n};\nmodule.exports = ValidationMessage;\n// ./src/components/forms/validation-message.jsx\n// module id = 189\n// module chunks = 0 1 2 3 4 5 6\n//# sourceURL=scratch:///./src/components/forms/validation-message.jsx?");
+ })

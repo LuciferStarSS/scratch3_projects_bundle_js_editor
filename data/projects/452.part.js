@@ -1,0 +1,5 @@
+/* 452 */
+ (function(module, exports, __webpack_require__) {
+"use strict";
+eval("\nvar classNames = __webpack_require__(5);\nvar PropTypes = __webpack_require__(1);\nvar React = __webpack_require__(0);\n__webpack_require__(739);\nvar ModalInnerContent = function ModalInnerContent(_ref) {\n    var children = _ref.children,\n        className = _ref.className;\n    return React.createElement(\n        'div',\n        {\n            className: classNames('modal-inner-content', className)\n        },\n        children\n    );\n};\nModalInnerContent.propTypes = {\n    children: PropTypes.node,\n    className: PropTypes.string\n};\nmodule.exports = ModalInnerContent;\n// ./src/components/modal/base/modal-inner-content.jsx\n// module id = 452\n// module chunks = 0 1\n//# sourceURL=scratch:///./src/components/modal/base/modal-inner-content.jsx?");
+ })

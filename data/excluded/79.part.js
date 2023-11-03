@@ -1,0 +1,5 @@
+/* 79 */
+ (function(module, exports, __webpack_require__) {
+"use strict";
+eval("\nObject.defineProperty(exports, \"__esModule\", { value: true });\nvar dedupe_1 = __webpack_require__(75);\nexports.Dedupe = dedupe_1.Dedupe;\nvar functiontostring_1 = __webpack_require__(77);\nexports.FunctionToString = functiontostring_1.FunctionToString;\nvar sdkinformation_1 = __webpack_require__(82);\nexports.SDKInformation = sdkinformation_1.SDKInformation;\nvar inboundfilters_1 = __webpack_require__(78);\nexports.InboundFilters = inboundfilters_1.InboundFilters;\nvar extraerrordata_1 = __webpack_require__(76);\nexports.ExtraErrorData = extraerrordata_1.ExtraErrorData;\nvar debug_1 = __webpack_require__(80);\nexports.Debug = debug_1.Debug;\nvar rewriteframes_1 = __webpack_require__(81);\nexports.RewriteFrames = rewriteframes_1.RewriteFrames;\n/*# sourceMappingURL=index.js.map*/\n// ./~/@sentry/core/dist/integrations/index.js\n// module id = 79\n// module chunks = 0 1 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39\n//# sourceURL=scratch:///./~/@sentry/core/dist/integrations/index.js?");
+ })

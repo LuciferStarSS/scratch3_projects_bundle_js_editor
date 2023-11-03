@@ -1,0 +1,1 @@
+/* 472 */\n (function(module, exports, __webpack_require__) {\n\"use strict\";\nvar util = __webpack_require__(157);\nmodule.exports = SchemaObject;\nfunction SchemaObject(obj) {\n  util.copy(obj, this);\n}\n })

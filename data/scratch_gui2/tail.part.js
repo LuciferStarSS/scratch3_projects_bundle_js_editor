@@ -1,0 +1,2 @@
+ ]);\n});\n/*# sourceMappingURL=scratch-gui.js.map*/// ./~/scratch-gui/dist/scratch-gui.js\n// module id = 557\n// module chunks = 0 8\n//# sourceURL=scratch:///./~/scratch-gui/dist/scratch-gui.js?");
+ })

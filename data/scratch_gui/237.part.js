@@ -1,0 +1,1 @@
+/* 237 */\n (function(module, exports, __webpack_require__) {\nvar def = __webpack_require__(117).f;\nvar has = __webpack_require__(137);\nvar TAG = __webpack_require__(67)('toStringTag');\nmodule.exports = function (it, tag, stat) {\n  if (it && !has(it = stat ? it : it.prototype, TAG)) def(it, TAG, { configurable: true, value: tag });\n};\n })

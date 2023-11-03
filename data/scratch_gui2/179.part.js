@@ -1,0 +1,1 @@
+/* 179 */\n (function(module, exports, __webpack_require__) {\n\"use strict\";\n/* global Promise */\n\n\n\nvar ES6Promise = null;\nif (typeof Promise !== \"undefined\") {\n    ES6Promise = Promise;\n} else {\n    ES6Promise = __webpack_require__(923);\n}\n/**\n * Let the user use/change some implementations.\n */\nmodule.exports = {\n    Promise: ES6Promise\n};\n })

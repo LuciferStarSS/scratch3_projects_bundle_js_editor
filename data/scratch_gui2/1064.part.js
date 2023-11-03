@@ -1,0 +1,1 @@
+/* 1064 */\n (function(module, exports, __webpack_require__) {\n\"use strict\";\nmodule.exports = function mod(number, modulo) {\n\tvar remain = number % modulo;\n\treturn Math.floor(remain >= 0 ? remain : remain + modulo);\n};\n })

@@ -1,0 +1,7 @@
+/* 40 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+eval("\n\nvar _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };\n\nvar classNames = __webpack_require__(5);\nvar omit = __webpack_require__(14);\nvar PropTypes = __webpack_require__(1);\nvar React = __webpack_require__(0);\n\nvar Avatar = function Avatar(props) {\n    return React.createElement('img', _extends({\n        className: classNames('avatar', props.className)\n    }, omit(props, ['className'])));\n};\n\nAvatar.propTypes = {\n    className: PropTypes.string,\n    src: PropTypes.string\n};\n\nAvatar.defaultProps = {\n    src: '//cdn2.scratch.mit.edu/get_image/user/2584924_24x24.png?v=1438702210.96'\n};\n\nmodule.exports = Avatar;\n\n//////////////////\n// WEBPACK FOOTER\n// ./src/components/avatar/avatar.jsx\n// module id = 40\n// module chunks = 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39\n\n//# sourceURL=scratch:///./src/components/avatar/avatar.jsx?");
+
+/***/ })

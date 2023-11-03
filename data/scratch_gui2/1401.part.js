@@ -1,0 +1,1 @@
+/* 1401 */\n (function(module, exports) {\nmodule.exports = function () { };\n })

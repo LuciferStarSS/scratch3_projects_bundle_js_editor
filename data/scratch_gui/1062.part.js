@@ -1,0 +1,1 @@
+/* 1062 */\n (function(module, exports, __webpack_require__) {\n\"use strict\";\nvar $isNaN = Number.isNaN || function (a) { return a !== a; };\nmodule.exports = Number.isFinite || function (x) { return typeof x === 'number' && !$isNaN(x) && x !== Infinity && x !== -Infinity; };\n })

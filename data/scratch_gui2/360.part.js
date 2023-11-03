@@ -1,0 +1,1 @@
+/* 360 */\n (function(module, exports) {\nmodule.exports =\"./static/assets/95be8547447707daedc68ea89d7b9370.gif\";\n })

@@ -1,0 +1,1 @@
+/* 192 */\n (function(module, exports) {\nvar toString = {}.toString;\nmodule.exports = function (it) {\n  return toString.call(it).slice(8, -1);\n};\n })

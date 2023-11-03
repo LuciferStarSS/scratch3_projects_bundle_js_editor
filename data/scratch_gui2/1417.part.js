@@ -1,0 +1,1 @@
+/* 1417 */\n (function(module, exports, __webpack_require__) {\n__webpack_require__(1418);\nvar $Object = __webpack_require__(53).Object;\nmodule.exports = function create(P, D) {\n  return $Object.create(P, D);\n};\n })

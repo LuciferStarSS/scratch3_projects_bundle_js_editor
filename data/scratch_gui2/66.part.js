@@ -1,0 +1,1 @@
+/* 66 */\n (function(module, exports) {\n\nvar global = module.exports = typeof window != 'undefined' && window.Math == Math\n  ? window : typeof self != 'undefined' && self.Math == Math ? self\n  \n  : Function('return this')();\nif (typeof __g == 'number') __g = global; \n })

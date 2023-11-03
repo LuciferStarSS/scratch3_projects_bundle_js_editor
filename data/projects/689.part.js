@@ -1,0 +1,5 @@
+/* 689 */
+ (function(module, __webpack_exports__, __webpack_require__) {
+"use strict";
+eval(" var __WEBPACK_IMPORTED_MODULE_0__memoize_js__ = __webpack_require__(706);\n/** Used as the maximum memoize cache size. */\nvar MAX_MEMOIZE_SIZE = 500;\n/**\n * A specialized version of `_.memoize` which clears the memoized function's\n * cache when it exceeds `MAX_MEMOIZE_SIZE`.\n *\n * @private\n * @param {Function} func The function to have its output memoized.\n * @returns {Function} Returns the new memoized function.\n */\nfunction memoizeCapped(func) {\n  var result = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__memoize_js__[\"a\" /* default */])(func, function(key) {\n    if (cache.size === MAX_MEMOIZE_SIZE) {\n      cache.clear();\n    }\n    return key;\n  });\n  var cache = result.cache;\n  return result;\n}\n/* harmony default export */ __webpack_exports__[\"a\"] = (memoizeCapped);\n// ./~/lodash-es/_memoizeCapped.js\n// module id = 689\n// module chunks = 0 1\n//# sourceURL=scratch:///./~/lodash-es/_memoizeCapped.js?");
+ })

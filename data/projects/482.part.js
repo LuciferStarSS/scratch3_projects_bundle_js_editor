@@ -1,0 +1,5 @@
+/* 482 */
+ (function(module, exports, __webpack_require__) {
+"use strict";
+eval("\nvar initSentry = function initSentry() {\n    // initialize Sentry instance, making sure it hasn't been initialized already\n    if (!window.Sentry && '' + \"\" !== '') {\n        var Sentry = __webpack_require__(64);\n        Sentry.init({\n            dsn: '' + \"\",\n            // Do not collect global onerror, only collect specifically from React error boundaries.\n            // TryCatch plugin also includes errors from setTimeouts (i.e. the VM)\n            integrations: function integrations(_integrations) {\n                return _integrations.filter(function (i) {\n                    return !(i.name === 'GlobalHandlers' || i.name === 'TryCatch');\n                });\n            }\n        });\n        window.Sentry = Sentry; // Allow GUI access to Sentry via window\n    }\n};\nmodule.exports = initSentry;\n// ./src/lib/sentry.js\n// module id = 482\n// module chunks = 0 1 8\n//# sourceURL=scratch:///./src/lib/sentry.js?");
+ })

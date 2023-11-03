@@ -1,0 +1,1 @@
+/* 1441 */\n (function(module, exports, __webpack_require__) {\n\nvar toIObject = __webpack_require__(139);\nvar $getOwnPropertyDescriptor = __webpack_require__(330).f;\n__webpack_require__(321)('getOwnPropertyDescriptor', function () {\n  return function getOwnPropertyDescriptor(it, key) {\n    return $getOwnPropertyDescriptor(toIObject(it), key);\n  };\n});\n })

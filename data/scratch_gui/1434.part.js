@@ -1,0 +1,1 @@
+/* 1434 */\n (function(module, exports, __webpack_require__) {\nvar global = __webpack_require__(66);\nvar navigator = global.navigator;\nmodule.exports = navigator && navigator.userAgent || '';\n })

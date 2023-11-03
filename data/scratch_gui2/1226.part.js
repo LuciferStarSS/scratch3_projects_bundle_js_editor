@@ -1,0 +1,1 @@
+/* 1226 */\n (function(module, exports, __webpack_require__) {\n\n\n\nvar StartAudioContext = __webpack_require__(333);\nmodule.exports = function (context) {\n  if (typeof document !== 'undefined') {\n    return StartAudioContext(context);\n  }\n};\n })

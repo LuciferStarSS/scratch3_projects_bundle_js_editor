@@ -1,0 +1,5 @@
+/* 304 */
+ (function(module, __webpack_exports__, __webpack_require__) {
+"use strict";
+eval(" var __WEBPACK_IMPORTED_MODULE_0__isKeyable_js__ = __webpack_require__(677);\n/**\n * Gets the data for `map`.\n *\n * @private\n * @param {Object} map The map to query.\n * @param {string} key The reference key.\n * @returns {*} Returns the map data.\n */\nfunction getMapData(map, key) {\n  var data = map.__data__;\n  return __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__isKeyable_js__[\"a\" /* default */])(key)\n    ? data[typeof key == 'string' ? 'string' : 'hash']\n    : data.map;\n}\n/* harmony default export */ __webpack_exports__[\"a\"] = (getMapData);\n// ./~/lodash-es/_getMapData.js\n// module id = 304\n// module chunks = 0 1\n//# sourceURL=scratch:///./~/lodash-es/_getMapData.js?");
+ })

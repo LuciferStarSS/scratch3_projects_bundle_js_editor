@@ -1,0 +1,1 @@
+/* 1392 */\n (function(module, exports, __webpack_require__) {\nvar $export = __webpack_require__(95);\n// 19.1.2.4 / 15.2.3.6 Object.defineProperty(O, P, Attributes)\n$export($export.S + $export.F * !__webpack_require__(119), 'Object', { defineProperty: __webpack_require__(117).f });\n })

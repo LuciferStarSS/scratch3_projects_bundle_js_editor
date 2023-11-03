@@ -1,0 +1,4 @@
+/* 1223 */
+ (function(module, exports, __webpack_require__) {
+eval("var Symbol = __webpack_require__(555),\n    isArguments = __webpack_require__(1230),\n    isArray = __webpack_require__(712);\n/** Built-in value references. */\nvar spreadableSymbol = Symbol ? Symbol.isConcatSpreadable : undefined;\n/**\n * Checks if `value` is a flattenable `arguments` object or array.\n *\n * @private\n * @param {*} value The value to check.\n * @returns {boolean} Returns `true` if `value` is flattenable, else `false`.\n */\nfunction isFlattenable(value) {\n  return isArray(value) || isArguments(value) ||\n    !!(spreadableSymbol && value && value[spreadableSymbol]);\n}\nmodule.exports = isFlattenable;\n// ./~/lodash/_isFlattenable.js\n// module id = 1223\n// module chunks = 0\n//# sourceURL=scratch:///./~/lodash/_isFlattenable.js?");
+ })

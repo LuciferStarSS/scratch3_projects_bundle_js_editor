@@ -1,0 +1,4 @@
+/* 613 */
+ (function(module, exports, __webpack_require__) {
+eval("exports = module.exports = __webpack_require__(2)();\n// module\nexports.push([module.i, \"/* UI Primary Colors */\\n/* #FF661A */\\n/* UI Secondary Colors */\\n/* 3.0 colors */\\n/* Using www naming convention for now, should be consistent with gui */\\n/* #CF63CF Sounds Primary */\\n/* modals */\\n/* Overlay UI Gray Colors */\\n/* Typography Colors */\\n/* Down Deep */\\n.not-available-image {\\n  padding: 5rem 0 2rem; }\\n\", \"\"]);\n// exports\n// ./~/css-loader!./~/postcss-loader/lib?{}!./~/sass-loader/lib/loader.js!./src/components/not-available/not-available.scss\n// module id = 613\n// module chunks = 0 8\n//# sourceURL=scratch:///./src/components/not-available/not-available.scss?./~/css-loader!./~/postcss-loader/lib?%7B%7D!./~/sass-loader/lib/loader.js");
+ })

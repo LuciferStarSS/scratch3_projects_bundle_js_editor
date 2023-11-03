@@ -1,0 +1,4 @@
+/* 1217 */
+ (function(module, exports, __webpack_require__) {
+eval("var baseGetTag = __webpack_require__(520),\n    isObjectLike = __webpack_require__(474);\n/** `Object#toString` result references. */\nvar argsTag = '[object Arguments]';\n/**\n * The base implementation of `_.isArguments`.\n *\n * @private\n * @param {*} value The value to check.\n * @returns {boolean} Returns `true` if `value` is an `arguments` object,\n */\nfunction baseIsArguments(value) {\n  return isObjectLike(value) && baseGetTag(value) == argsTag;\n}\nmodule.exports = baseIsArguments;\n// ./~/lodash/_baseIsArguments.js\n// module id = 1217\n// module chunks = 0\n//# sourceURL=scratch:///./~/lodash/_baseIsArguments.js?");
+ })

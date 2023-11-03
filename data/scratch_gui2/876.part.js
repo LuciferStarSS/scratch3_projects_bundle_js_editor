@@ -1,0 +1,1 @@
+/* 876 */\n (function(module, exports) {\nmodule.exports =\"./static/assets/6a8dc5055578021d14e852d671271d5d.png\";\n })

@@ -1,0 +1,5 @@
+/* 248 */
+ (function(module, exports, __webpack_require__) {
+"use strict";
+eval("\n/**\n * @user-thumbnail\n * Utility functions to return thumnail-related strings\n */\n/**\n * Generate a thumbnail url for a particular userid, with width and height.\n * @param {string} userId userId for the user whose thumbnail we want\n * @param {number} width desired thumbnail width; defaults to 32\n * @param {number} height desired thumbnail height; defaults to width.\n * @returns {string} thumbnail url string\n */\nvar thumbnailUrl = function thumbnailUrl(userId, width, height) {\n  return './get_image/user/' + (userId || 'default') + '_' + ((width ? width : 32) + 'x' + (height ? height : width ? width : 32) + '.png');\n};\nmodule.exports = thumbnailUrl;\n// ./src/lib/user-thumbnail.js\n// module id = 248\n// module chunks = 0 11 14 19 20\n//# sourceURL=scratch:///./src/lib/user-thumbnail.js?");
+ })

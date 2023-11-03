@@ -1,0 +1,1 @@
+/* 1381 */\n (function(module, exports) {\nmodule.exports = /[-\\s]+(.)?/g\n })

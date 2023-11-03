@@ -1,0 +1,5 @@
+/* 84 */
+ (function(module, exports, __webpack_require__) {
+"use strict";
+eval("\nObject.defineProperty(exports, \"__esModule\", { value: true });\nvar hub_1 = __webpack_require__(8);\nvar logger_1 = __webpack_require__(7);\n/**\n * Internal function to create a new SDK client instance. The client is\n * installed and then bound to the current scope.\n *\n * @param clientClass The client class to instanciate.\n * @param options Options to pass to the client.\n * @returns The installed and bound client instance.\n */\nfunction initAndBind(clientClass, options) {\n    if (options.debug === true) {\n        logger_1.logger.enable();\n    }\n    if (hub_1.getCurrentHub().getClient()) {\n        return;\n    }\n    var client = new clientClass(options);\n    hub_1.getCurrentHub().bindClient(client);\n    client.install();\n}\nexports.initAndBind = initAndBind;\n/*# sourceMappingURL=sdk.js.map*/\n// ./~/@sentry/core/dist/sdk.js\n// module id = 84\n// module chunks = 0 1 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39\n//# sourceURL=scratch:///./~/@sentry/core/dist/sdk.js?");
+ })
