@@ -1,0 +1,1 @@
+/* 504 */\n (function(module, exports, __webpack_require__) {\n\"use strict\";\nvar toCamelFn = function(str, letter){\n       return letter ? letter.toUpperCase(): ''\n   }\nvar hyphenRe = __webpack_require__(1381)\nmodule.exports = function(str){\n   return str?\n          str.replace(hyphenRe, toCamelFn):\n          ''\n}\n })

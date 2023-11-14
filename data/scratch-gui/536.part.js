@@ -1,0 +1,1 @@
+/* 536 */\n (function(module, exports) {\nmodule.exports = \"<svg version=\\\"1.1\\\" width=\\\"2\\\" height=\\\"2\\\" viewBox=\\\"-1 -1 2 2\\\" xmlns=\\\"http://www.w3.org/2000/svg\\\" xmlns:xlink=\\\"http://www.w3.org/1999/xlink\\\">\\n  <!-- Exported by Scratch - http://scratch.mit.edu/ -->\\n</svg>\"\n })
