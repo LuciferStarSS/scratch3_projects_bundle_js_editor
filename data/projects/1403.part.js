@@ -1,0 +1,4 @@
+/* 1403 */
+ (function(module, exports) {
+eval("module.exports = {\"$schema\":\"http://json-schema.org/draft-07/schema#\",\"$id\":\"https://raw.githubusercontent.com/epoberezkin/ajv/master/lib/refs/data.json#\",\"description\":\"Meta-schema for $data reference (JSON Schema extension proposal)\",\"type\":\"object\",\"required\":[\"$data\"],\"properties\":{\"$data\":{\"type\":\"string\",\"anyOf\":[{\"format\":\"relative-json-pointer\"},{\"format\":\"json-pointer\"}]}},\"additionalProperties\":false}\n// ./~/scratch-parser/~/ajv/lib/refs/data.json\n// module id = 1403\n// module chunks = 0\n//# sourceURL=scratch:///./~/scratch-parser/~/ajv/lib/refs/data.json?");
+ })

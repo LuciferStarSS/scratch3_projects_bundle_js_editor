@@ -1,0 +1,4 @@
+/* 1368 */
+ (function(module, exports) {
+eval("module.exports = {\"$id\":\"https://scratch.mit.edu/sprite2_schema.json\",\"description\":\"Scratch 2.0 project schema\",\"type\":\"object\",\"allOf\":[{\"$ref\":\"sb2_definitions.json#/definitions/sprite_object\"},{\"type\":\"object\",\"properties\":{\"scratchX\":{\"type\":\"number\"},\"scratchY\":{\"type\":\"number\"},\"scale\":{\"type\":\"number\"},\"direction\":{\"type\":\"number\"},\"rotationStyle\":{\"type\":\"string\"},\"isDraggable\":{\"type\":\"boolean\"},\"indexInLibrary\":{\"type\":\"number\"},\"visible\":{\"type\":\"boolean\"},\"spriteInfo\":{\"type\":\"object\"}}}]}\n// ./~/scratch-parser/lib/sprite2_schema.json\n// module id = 1368\n// module chunks = 0\n//# sourceURL=scratch:///./~/scratch-parser/lib/sprite2_schema.json?");
+ })

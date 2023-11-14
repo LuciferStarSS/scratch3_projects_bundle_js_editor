@@ -1,0 +1,4 @@
+/* 1233 */
+ (function(module, exports, __webpack_require__) {
+eval("var baseGetTag = __webpack_require__(520),\n    isObjectLike = __webpack_require__(474);\n/** `Object#toString` result references. */\nvar symbolTag = '[object Symbol]';\n/**\n * Checks if `value` is classified as a `Symbol` primitive or object.\n *\n * @static\n * @memberOf _\n * @since 4.0.0\n * @category Lang\n * @param {*} value The value to check.\n * @returns {boolean} Returns `true` if `value` is a symbol, else `false`.\n * @example\n *\n * _.isSymbol(Symbol.iterator);\n * // => true\n *\n * _.isSymbol('abc');\n * // => false\n */\nfunction isSymbol(value) {\n  return typeof value == 'symbol' ||\n    (isObjectLike(value) && baseGetTag(value) == symbolTag);\n}\nmodule.exports = isSymbol;\n// ./~/lodash/isSymbol.js\n// module id = 1233\n// module chunks = 0\n//# sourceURL=scratch:///./~/lodash/isSymbol.js?");
+ })

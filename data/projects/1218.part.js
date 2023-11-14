@@ -1,0 +1,4 @@
+/* 1218 */
+ (function(module, exports, __webpack_require__) {
+eval("var baseGetTag = __webpack_require__(520),\n    isObjectLike = __webpack_require__(474);\n/** `Object#toString` result references. */\nvar regexpTag = '[object RegExp]';\n/**\n * The base implementation of `_.isRegExp` without Node.js optimizations.\n *\n * @private\n * @param {*} value The value to check.\n * @returns {boolean} Returns `true` if `value` is a regexp, else `false`.\n */\nfunction baseIsRegExp(value) {\n  return isObjectLike(value) && baseGetTag(value) == regexpTag;\n}\nmodule.exports = baseIsRegExp;\n// ./~/lodash/_baseIsRegExp.js\n// module id = 1218\n// module chunks = 0\n//# sourceURL=scratch:///./~/lodash/_baseIsRegExp.js?");
+ })

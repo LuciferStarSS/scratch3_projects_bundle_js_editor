@@ -1,0 +1,4 @@
+/* 1214 */
+ (function(module, exports) {
+eval("/**\n * A specialized version of `_.map` for arrays without support for iteratee\n * shorthands.\n *\n * @private\n * @param {Array} [array] The array to iterate over.\n * @param {Function} iteratee The function invoked per iteration.\n * @returns {Array} Returns the new mapped array.\n */\nfunction arrayMap(array, iteratee) {\n  var index = -1,\n      length = array == null ? 0 : array.length,\n      result = Array(length);\n  while (++index < length) {\n    result[index] = iteratee(array[index], index, array);\n  }\n  return result;\n}\nmodule.exports = arrayMap;\n// ./~/lodash/_arrayMap.js\n// module id = 1214\n// module chunks = 0\n//# sourceURL=scratch:///./~/lodash/_arrayMap.js?");
+ })
