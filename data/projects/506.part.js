@@ -1,0 +1,5 @@
+/* 506 */
+ (function(module, __webpack_exports__, __webpack_require__) {
+"use strict";
+eval(" var __WEBPACK_IMPORTED_MODULE_0__defineProperty_js__ = __webpack_require__(663);\n/**\n * The base implementation of `assignValue` and `assignMergeValue` without\n * value checks.\n *\n * @private\n * @param {Object} object The object to modify.\n * @param {string} key The key of the property to assign.\n * @param {*} value The value to assign.\n */\nfunction baseAssignValue(object, key, value) {\n  if (key == '__proto__' && __WEBPACK_IMPORTED_MODULE_0__defineProperty_js__[\"a\" /* default */]) {\n    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__defineProperty_js__[\"a\" /* default */])(object, key, {\n      'configurable': true,\n      'enumerable': true,\n      'value': value,\n      'writable': true\n    });\n  } else {\n    object[key] = value;\n  }\n}\n/* harmony default export */ __webpack_exports__[\"a\"] = (baseAssignValue);\n// ./~/lodash-es/_baseAssignValue.js\n// module id = 506\n// module chunks = 0 1\n//# sourceURL=scratch:///./~/lodash-es/_baseAssignValue.js?");
+ })

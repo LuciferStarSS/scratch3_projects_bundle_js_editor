@@ -1,0 +1,4 @@
+/* 468 */
+ (function(module, exports) {
+eval("module.exports = function(originalModule) {\r\n\tif(!originalModule.webpackPolyfill) {\r\n\t\tvar module = Object.create(originalModule);\r\n\t\t// module.parent = undefined by default\r\n\t\tif(!module.children) module.children = [];\r\n\t\tObject.defineProperty(module, \"loaded\", {\r\n\t\t\tenumerable: true,\r\n\t\t\tget: function() {\r\n\t\t\t\treturn module.l;\r\n\t\t\t}\r\n\t\t});\r\n\t\tObject.defineProperty(module, \"id\", {\r\n\t\t\tenumerable: true,\r\n\t\t\tget: function() {\r\n\t\t\t\treturn module.i;\r\n\t\t\t}\r\n\t\t});\r\n\t\tObject.defineProperty(module, \"exports\", {\r\n\t\t\tenumerable: true,\r\n\t\t});\r\n\t\tmodule.webpackPolyfill = 1;\r\n\t}\r\n\treturn module;\r\n};\r\n// (webpack)/buildin/harmony-module.js\n// module id = 468\n// module chunks = 0 1\n//# sourceURL=scratch:///(webpack)/buildin/harmony-module.js?");
+ })

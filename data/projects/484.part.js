@@ -1,0 +1,5 @@
+/* 484 */
+ (function(module, exports, __webpack_require__) {
+"use strict";
+eval("\nvar classNames = __webpack_require__(5);\nvar PropTypes = __webpack_require__(1);\nvar React = __webpack_require__(0);\n__webpack_require__(533);\nvar EmojiText = function EmojiText(props) {\n    return React.createElement(props.as, {\n        className: classNames('emoji-text', props.className),\n        dangerouslySetInnerHTML: { // eslint-disable-line react/no-danger\n            __html: props.text\n        }\n    });\n};\nEmojiText.propTypes = {\n    className: PropTypes.string,\n    text: PropTypes.string.isRequired\n};\nEmojiText.defaultProps = {\n    as: 'p'\n};\nmodule.exports = EmojiText;\n// ./src/components/emoji-text/emoji-text.jsx\n// module id = 484\n// module chunks = 0 11 14\n//# sourceURL=scratch:///./src/components/emoji-text/emoji-text.jsx?");
+ })

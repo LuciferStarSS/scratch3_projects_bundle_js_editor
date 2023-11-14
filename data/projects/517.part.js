@@ -1,0 +1,5 @@
+/* 517 */
+ (function(module, __webpack_exports__, __webpack_require__) {
+"use strict";
+eval("/** Used as references for various `Number` constants. */\nvar MAX_SAFE_INTEGER = 9007199254740991;\n/**\n * Checks if `value` is a valid array-like length.\n *\n * **Note:** This method is loosely based on\n * [`ToLength`](http://ecma-international.org/ecma-262/7.0/#sec-tolength).\n *\n * @static\n * @memberOf _\n * @since 4.0.0\n * @category Lang\n * @param {*} value The value to check.\n * @returns {boolean} Returns `true` if `value` is a valid length, else `false`.\n * @example\n *\n * _.isLength(3);\n * // => true\n *\n * _.isLength(Number.MIN_VALUE);\n * // => false\n *\n * _.isLength(Infinity);\n * // => false\n *\n * _.isLength('3');\n * // => false\n */\nfunction isLength(value) {\n  return typeof value == 'number' &&\n    value > -1 && value % 1 == 0 && value <= MAX_SAFE_INTEGER;\n}\n/* harmony default export */ __webpack_exports__[\"a\"] = (isLength);\n// ./~/lodash-es/isLength.js\n// module id = 517\n// module chunks = 0 1\n//# sourceURL=scratch:///./~/lodash-es/isLength.js?");
+ })
