@@ -1,0 +1,1 @@
+/* 11 */\n (function(module, exports, __webpack_require__) {\nvar VirtualMachine = __webpack_require__(906);\nmodule.exports = VirtualMachine;\n })
