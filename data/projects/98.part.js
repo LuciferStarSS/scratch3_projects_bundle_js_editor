@@ -1,0 +1,5 @@
+/* 98 */
+ (function(module, exports, __webpack_require__) {
+"use strict";
+eval("\n// This list has to be updated when a new Scratch Wiki is made.\n// Note that wikis under testwiki are not included.\nvar wwwLocaleToScratchWikiLocale = {\n    en: 'en',\n    ja: 'ja',\n    fr: 'fr',\n    de: 'de',\n    ru: 'ru',\n    hu: 'hu',\n    nl: 'nl',\n    id: 'id'\n};\nvar getScratchWikiLink = function getScratchWikiLink(locale) {\n    if (!wwwLocaleToScratchWikiLocale.hasOwnProperty(locale)) {\n        locale = locale.split('-')[0];\n        if (!wwwLocaleToScratchWikiLocale.hasOwnProperty(locale)) {\n            locale = 'en';\n        }\n    }\n    return 'https://' + wwwLocaleToScratchWikiLocale[locale] + '.scratch-wiki.info/';\n};\nmodule.exports = getScratchWikiLink;\n// ./src/lib/scratch-wiki.js\n// module id = 98\n// module chunks = 0 1 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39\n//# sourceURL=scratch:///./src/lib/scratch-wiki.js?");
+ })

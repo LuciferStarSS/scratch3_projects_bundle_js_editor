@@ -1,0 +1,5 @@
+/* 83 */
+ (function(module, exports, __webpack_require__) {
+"use strict";
+eval("\nObject.defineProperty(exports, \"__esModule\", { value: true });\n/** Console logging verbosity for the SDK. */\nvar LogLevel;\n(function (LogLevel) {\n    /** No logs will be generated. */\n    LogLevel[LogLevel[\"None\"] = 0] = \"None\";\n    /** Only SDK internal errors will be logged. */\n    LogLevel[LogLevel[\"Error\"] = 1] = \"Error\";\n    /** Information useful for debugging the SDK will be logged. */\n    LogLevel[LogLevel[\"Debug\"] = 2] = \"Debug\";\n    /** All SDK actions will be logged. */\n    LogLevel[LogLevel[\"Verbose\"] = 3] = \"Verbose\";\n})(LogLevel = exports.LogLevel || (exports.LogLevel = {}));\n/*# sourceMappingURL=interfaces.js.map*/\n// ./~/@sentry/core/dist/interfaces.js\n// module id = 83\n// module chunks = 0 1 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39\n//# sourceURL=scratch:///./~/@sentry/core/dist/interfaces.js?");
+ })
