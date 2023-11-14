@@ -1,0 +1,1 @@
+/* 1413 */\n (function(module, exports, __webpack_require__) {\n__webpack_require__(1414);\nmodule.exports = __webpack_require__(53).Object.setPrototypeOf;\n })

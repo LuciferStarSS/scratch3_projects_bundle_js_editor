@@ -1,0 +1,1 @@
+/* 1385 */\n (function(module, exports, __webpack_require__) {\n\"use strict\";\nvar objectToString = Object.prototype.toString\nmodule.exports = function(v) {\n    return objectToString.apply(v) === '[object Function]'\n}\n })

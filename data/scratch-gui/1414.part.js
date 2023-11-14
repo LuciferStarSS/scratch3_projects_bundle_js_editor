@@ -1,0 +1,1 @@
+/* 1414 */\n (function(module, exports, __webpack_require__) {\n// 19.1.3.19 Object.setPrototypeOf(O, proto)\nvar $export = __webpack_require__(95);\n$export($export.S, 'Object', { setPrototypeOf: __webpack_require__(1415).set });\n })
