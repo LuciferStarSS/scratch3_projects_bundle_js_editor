@@ -1,0 +1,1 @@
+/* 432 */\n (function(module, exports) {\n/**\n * Default types of Target supported by the VM\n * @enum {string}\n */\nvar TargetType = {\n  /**\n   * Rendered target which can move, change costumes, etc.\n   */\n  SPRITE: 'sprite',\n  /**\n   * Rendered target which cannot move but can change backdrops\n   */\n  STAGE: 'stage'\n};\nmodule.exports = TargetType;\n })
