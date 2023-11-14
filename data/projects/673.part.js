@@ -1,0 +1,5 @@
+/* 673 */
+ (function(module, __webpack_exports__, __webpack_require__) {
+"use strict";
+eval("/** Used for built-in method references. */\nvar objectProto = Object.prototype;\n/** Used to check objects for own properties. */\nvar hasOwnProperty = objectProto.hasOwnProperty;\n/**\n * Initializes an array clone.\n *\n * @private\n * @param {Array} array The array to clone.\n * @returns {Array} Returns the initialized clone.\n */\nfunction initCloneArray(array) {\n  var length = array.length,\n      result = new array.constructor(length);\n  // Add properties assigned by `RegExp#exec`.\n  if (length && typeof array[0] == 'string' && hasOwnProperty.call(array, 'index')) {\n    result.index = array.index;\n    result.input = array.input;\n  }\n  return result;\n}\n/* harmony default export */ __webpack_exports__[\"a\"] = (initCloneArray);\n// ./~/lodash-es/_initCloneArray.js\n// module id = 673\n// module chunks = 0 1\n//# sourceURL=scratch:///./~/lodash-es/_initCloneArray.js?");
+ })

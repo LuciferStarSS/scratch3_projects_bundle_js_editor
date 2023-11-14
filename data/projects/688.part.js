@@ -1,0 +1,5 @@
+/* 688 */
+ (function(module, __webpack_exports__, __webpack_require__) {
+"use strict";
+eval(" var __WEBPACK_IMPORTED_MODULE_0__getMapData_js__ = __webpack_require__(304);\n/**\n * Sets the map `key` to `value`.\n *\n * @private\n * @name set\n * @memberOf MapCache\n * @param {string} key The key of the value to set.\n * @param {*} value The value to set.\n * @returns {Object} Returns the map cache instance.\n */\nfunction mapCacheSet(key, value) {\n  var data = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__getMapData_js__[\"a\" /* default */])(this, key),\n      size = data.size;\n  data.set(key, value);\n  this.size += data.size == size ? 0 : 1;\n  return this;\n}\n/* harmony default export */ __webpack_exports__[\"a\"] = (mapCacheSet);\n// ./~/lodash-es/_mapCacheSet.js\n// module id = 688\n// module chunks = 0 1\n//# sourceURL=scratch:///./~/lodash-es/_mapCacheSet.js?");
+ })

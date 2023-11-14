@@ -1,0 +1,5 @@
+/* 672 */
+ (function(module, __webpack_exports__, __webpack_require__) {
+"use strict";
+eval(" var __WEBPACK_IMPORTED_MODULE_0__nativeCreate_js__ = __webpack_require__(305);\n/** Used to stand-in for `undefined` hash values. */\nvar HASH_UNDEFINED = '__lodash_hash_undefined__';\n/**\n * Sets the hash `key` to `value`.\n *\n * @private\n * @name set\n * @memberOf Hash\n * @param {string} key The key of the value to set.\n * @param {*} value The value to set.\n * @returns {Object} Returns the hash instance.\n */\nfunction hashSet(key, value) {\n  var data = this.__data__;\n  this.size += this.has(key) ? 0 : 1;\n  data[key] = (__WEBPACK_IMPORTED_MODULE_0__nativeCreate_js__[\"a\" /* default */] && value === undefined) ? HASH_UNDEFINED : value;\n  return this;\n}\n/* harmony default export */ __webpack_exports__[\"a\"] = (hashSet);\n// ./~/lodash-es/_hashSet.js\n// module id = 672\n// module chunks = 0 1\n//# sourceURL=scratch:///./~/lodash-es/_hashSet.js?");
+ })

@@ -1,0 +1,5 @@
+/* 684 */
+ (function(module, __webpack_exports__, __webpack_require__) {
+"use strict";
+eval(" var __WEBPACK_IMPORTED_MODULE_0__Hash_js__ = __webpack_require__(635);\n var __WEBPACK_IMPORTED_MODULE_1__ListCache_js__ = __webpack_require__(301);\n var __WEBPACK_IMPORTED_MODULE_2__Map_js__ = __webpack_require__(457);\n\n/**\n * Removes all key-value entries from the map.\n *\n * @private\n * @name clear\n * @memberOf MapCache\n */\nfunction mapCacheClear() {\n  this.size = 0;\n  this.__data__ = {\n    'hash': new __WEBPACK_IMPORTED_MODULE_0__Hash_js__[\"a\" /* default */],\n    'map': new (__WEBPACK_IMPORTED_MODULE_2__Map_js__[\"a\" /* default */] || __WEBPACK_IMPORTED_MODULE_1__ListCache_js__[\"a\" /* default */]),\n    'string': new __WEBPACK_IMPORTED_MODULE_0__Hash_js__[\"a\" /* default */]\n  };\n}\n/* harmony default export */ __webpack_exports__[\"a\"] = (mapCacheClear);\n// ./~/lodash-es/_mapCacheClear.js\n// module id = 684\n// module chunks = 0 1\n//# sourceURL=scratch:///./~/lodash-es/_mapCacheClear.js?");
+ })

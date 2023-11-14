@@ -1,0 +1,5 @@
+/* 685 */
+ (function(module, __webpack_exports__, __webpack_require__) {
+"use strict";
+eval(" var __WEBPACK_IMPORTED_MODULE_0__getMapData_js__ = __webpack_require__(304);\n/**\n * Removes `key` and its value from the map.\n *\n * @private\n * @name delete\n * @memberOf MapCache\n * @param {string} key The key of the value to remove.\n * @returns {boolean} Returns `true` if the entry was removed, else `false`.\n */\nfunction mapCacheDelete(key) {\n  var result = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__getMapData_js__[\"a\" /* default */])(this, key)['delete'](key);\n  this.size -= result ? 1 : 0;\n  return result;\n}\n/* harmony default export */ __webpack_exports__[\"a\"] = (mapCacheDelete);\n// ./~/lodash-es/_mapCacheDelete.js\n// module id = 685\n// module chunks = 0 1\n//# sourceURL=scratch:///./~/lodash-es/_mapCacheDelete.js?");
+ })

@@ -1,0 +1,4 @@
+/* 758 */
+ (function(module, exports, __webpack_require__) {
+eval("// optional / simple context binding\nvar aFunction = __webpack_require__(1027);\nmodule.exports = function(fn, that, length){\n  aFunction(fn);\n  if(that === undefined)return fn;\n  switch(length){\n    case 1: return function(a){\n      return fn.call(that, a);\n    };\n    case 2: return function(a, b){\n      return fn.call(that, a, b);\n    };\n    case 3: return function(a, b, c){\n      return fn.call(that, a, b, c);\n    };\n  }\n  return function(/* ...args */){\n    return fn.apply(that, arguments);\n  };\n};\n// ./~/core-js/library/modules/_ctx.js\n// module id = 758\n// module chunks = 0\n//# sourceURL=scratch:///./~/core-js/library/modules/_ctx.js?");
+ })

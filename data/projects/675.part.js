@@ -1,0 +1,5 @@
+/* 675 */
+ (function(module, __webpack_exports__, __webpack_require__) {
+"use strict";
+eval(" var __WEBPACK_IMPORTED_MODULE_0__baseCreate_js__ = __webpack_require__(645);\n var __WEBPACK_IMPORTED_MODULE_1__getPrototype_js__ = __webpack_require__(510);\n var __WEBPACK_IMPORTED_MODULE_2__isPrototype_js__ = __webpack_require__(462);\n\n/**\n * Initializes an object clone.\n *\n * @private\n * @param {Object} object The object to clone.\n * @returns {Object} Returns the initialized clone.\n */\nfunction initCloneObject(object) {\n  return (typeof object.constructor == 'function' && !__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_2__isPrototype_js__[\"a\" /* default */])(object))\n    ? __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__baseCreate_js__[\"a\" /* default */])(__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__getPrototype_js__[\"a\" /* default */])(object))\n    : {};\n}\n/* harmony default export */ __webpack_exports__[\"a\"] = (initCloneObject);\n// ./~/lodash-es/_initCloneObject.js\n// module id = 675\n// module chunks = 0 1\n//# sourceURL=scratch:///./~/lodash-es/_initCloneObject.js?");
+ })

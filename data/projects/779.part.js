@@ -1,0 +1,5 @@
+/* 779 */
+ (function(module, exports, __webpack_require__) {
+"use strict";
+eval("\nvar utils = __webpack_require__(165);\nvar support = __webpack_require__(440);\nvar ArrayReader = __webpack_require__(776);\nvar StringReader = __webpack_require__(1181);\nvar NodeBufferReader = __webpack_require__(1180);\nvar Uint8ArrayReader = __webpack_require__(778);\n/**\n * Create a reader adapted to the data.\n * @param {String|ArrayBuffer|Uint8Array|Buffer} data the data to read.\n * @return {DataReader} the data reader.\n */\nmodule.exports = function (data) {\n    var type = utils.getTypeOf(data);\n    utils.checkSupport(type);\n    if (type === \"string\" && !support.uint8array) {\n        return new StringReader(data);\n    }\n    if (type === \"nodebuffer\") {\n        return new NodeBufferReader(data);\n    }\n    if (support.uint8array) {\n        return new Uint8ArrayReader(utils.transformTo(\"uint8array\", data));\n    }\n    return new ArrayReader(utils.transformTo(\"array\", data));\n};\n// ./~/jszip/lib/reader/readerFor.js\n// module id = 779\n// module chunks = 0\n//# sourceURL=scratch:///./~/jszip/lib/reader/readerFor.js?");
+ })
