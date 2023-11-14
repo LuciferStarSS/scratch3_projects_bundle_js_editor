@@ -1,0 +1,1 @@
+/* 160 */\n (function(module, exports, __webpack_require__) {\n// This is free and unencumbered software released into the public domain.\n// See LICENSE.md for more information.\nvar encoding = __webpack_require__(907);\nmodule.exports = {\n  TextEncoder: encoding.TextEncoder,\n  TextDecoder: encoding.TextDecoder,\n};\n })

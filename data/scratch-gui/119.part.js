@@ -1,0 +1,1 @@
+/* 119 */\n (function(module, exports, __webpack_require__) {\n// Thank's IE8 for his funny defineProperty\nmodule.exports = !__webpack_require__(158)(function () {\n  return Object.defineProperty({}, 'a', { get: function () { return 7; } }).a != 7;\n});\n })
