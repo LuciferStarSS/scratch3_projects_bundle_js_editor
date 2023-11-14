@@ -1,0 +1,5 @@
+/* 912 */
+ (function(module, exports, __webpack_require__) {
+"use strict";
+eval("\nvar classNames = __webpack_require__(5);\nvar PropTypes = __webpack_require__(1);\nvar React = __webpack_require__(0);\n__webpack_require__(1412);\nvar ToggleSlider = function ToggleSlider(props) {\n    return React.createElement(\n        'label',\n        { className: classNames('toggle-switch', props.className) },\n        React.createElement('input', {\n            checked: props.checked,\n            type: 'checkbox',\n            onChange: props.onChange\n        }),\n        React.createElement('span', { className: 'slider' })\n    );\n};\nToggleSlider.propTypes = {\n    checked: PropTypes.bool,\n    className: PropTypes.string,\n    onChange: PropTypes.func\n};\nmodule.exports = ToggleSlider;\n// ./src/components/forms/toggle-slider.jsx\n// module id = 912\n// module chunks = 0\n//# sourceURL=scratch:///./src/components/forms/toggle-slider.jsx?");
+ })

@@ -1,0 +1,4 @@
+/* 898 */
+ (function(module, exports, __webpack_require__) {
+eval("module.exports = __webpack_require__(562)(\"bW9kdWxlLmV4cG9ydHMgPSAiZGF0YTppbWFnZS9zdmcreG1sO2Jhc2U2NCxQRDk0Yld3Z2RtVnljMmx2YmowaU1TNHdJajgrQ2p4emRtY2dkMmxrZEdnOUlqRXlPQ0lnYUdWcFoyaDBQU0l4TWpnaUlIaHRiRzV6UFNKb2RIUndPaTh2ZDNkM0xuY3pMbTl5Wnk4eU1EQXdMM04yWnlJZ2VHMXNibk02YzNablBTSm9kSFJ3T2k4dmQzZDNMbmN6TG05eVp5OHlNREF3TDNOMlp5SStDaUE4Wno0S0lDQThjbVZqZENCbWFXeHNQU0lqUTBORElpQm9aV2xuYUhROUlqRXlPQ0lnZDJsa2RHZzlJakV5T0NJdlBnb2dJRHgwWlhoMElHWnBiR3c5SW1Kc1lXTnJJaUI1UFNJeE1EY2lJSGc5SWpNMUxqVWlJR1p2Ym5RdGMybDZaVDBpTVRJNElqNC9QQzkwWlhoMFBnb2dQQzluUGdvOEwzTjJaejRLIg==\")\n// ./~/arraybuffer-loader!./~/scratch-storage/src/builtins/defaultVector.svg\n// module id = 898\n// module chunks = 0\n//# sourceURL=scratch:///./~/scratch-storage/src/builtins/defaultVector.svg?./~/arraybuffer-loader");
+ })

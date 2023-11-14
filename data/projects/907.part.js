@@ -1,0 +1,7 @@
+/* 907 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+eval("\n\nvar classNames = __webpack_require__(5);\nvar PropTypes = __webpack_require__(1);\nvar FlexRow = __webpack_require__(12);\nvar React = __webpack_require__(0);\n\n__webpack_require__(1409);\n\nvar CommentingStatus = function CommentingStatus(props) {\n    return React.createElement(\n        'div',\n        { className: classNames('commenting-status', props.className) },\n        React.createElement(\n            'div',\n            { className: classNames('commenting-status-inner-content', props.innerClassName) },\n            React.createElement(\n                FlexRow,\n                { className: 'comment-status-img' },\n                React.createElement('img', {\n                    className: 'comment-status-icon',\n                    src: '/svgs/project/comment-status.svg'\n                })\n            ),\n            React.createElement(\n                FlexRow,\n                null,\n                props.children\n            )\n        )\n    );\n};\n\nCommentingStatus.propTypes = {\n    children: PropTypes.node,\n    className: PropTypes.string,\n    innerClassName: PropTypes.string\n};\n\nmodule.exports = CommentingStatus;\n\n//////////////////\n// WEBPACK FOOTER\n// ./src/components/commenting-status/commenting-status.jsx\n// module id = 907\n// module chunks = 0\n\n//# sourceURL=scratch:///./src/components/commenting-status/commenting-status.jsx?");
+
+/***/ })
