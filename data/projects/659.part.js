@@ -1,0 +1,5 @@
+/* 659 */
+ (function(module, __webpack_exports__, __webpack_require__) {
+"use strict";
+eval(" var __WEBPACK_IMPORTED_MODULE_0__cloneArrayBuffer_js__ = __webpack_require__(459);\n/**\n * Creates a clone of `typedArray`.\n *\n * @private\n * @param {Object} typedArray The typed array to clone.\n * @param {boolean} [isDeep] Specify a deep clone.\n * @returns {Object} Returns the cloned typed array.\n */\nfunction cloneTypedArray(typedArray, isDeep) {\n  var buffer = isDeep ? __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__cloneArrayBuffer_js__[\"a\" /* default */])(typedArray.buffer) : typedArray.buffer;\n  return new typedArray.constructor(buffer, typedArray.byteOffset, typedArray.length);\n}\n/* harmony default export */ __webpack_exports__[\"a\"] = (cloneTypedArray);\n// ./~/lodash-es/_cloneTypedArray.js\n// module id = 659\n// module chunks = 0 1\n//# sourceURL=scratch:///./~/lodash-es/_cloneTypedArray.js?");
+ })

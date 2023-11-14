@@ -1,0 +1,5 @@
+/* 649 */
+ (function(module, __webpack_exports__, __webpack_require__) {
+"use strict";
+eval(" var __WEBPACK_IMPORTED_MODULE_0__getTag_js__ = __webpack_require__(461);\n var __WEBPACK_IMPORTED_MODULE_1__isObjectLike_js__ = __webpack_require__(243);\n/** `Object#toString` result references. */\nvar setTag = '[object Set]';\n/**\n * The base implementation of `_.isSet` without Node.js optimizations.\n *\n * @private\n * @param {*} value The value to check.\n * @returns {boolean} Returns `true` if `value` is a set, else `false`.\n */\nfunction baseIsSet(value) {\n  return __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__isObjectLike_js__[\"a\" /* default */])(value) && __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__getTag_js__[\"a\" /* default */])(value) == setTag;\n}\n/* harmony default export */ __webpack_exports__[\"a\"] = (baseIsSet);\n// ./~/lodash-es/_baseIsSet.js\n// module id = 649\n// module chunks = 0 1\n//# sourceURL=scratch:///./~/lodash-es/_baseIsSet.js?");
+ })

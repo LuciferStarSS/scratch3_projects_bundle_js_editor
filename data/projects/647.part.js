@@ -1,0 +1,5 @@
+/* 647 */
+ (function(module, __webpack_exports__, __webpack_require__) {
+"use strict";
+eval(" var __WEBPACK_IMPORTED_MODULE_0__getTag_js__ = __webpack_require__(461);\n var __WEBPACK_IMPORTED_MODULE_1__isObjectLike_js__ = __webpack_require__(243);\n/** `Object#toString` result references. */\nvar mapTag = '[object Map]';\n/**\n * The base implementation of `_.isMap` without Node.js optimizations.\n *\n * @private\n * @param {*} value The value to check.\n * @returns {boolean} Returns `true` if `value` is a map, else `false`.\n */\nfunction baseIsMap(value) {\n  return __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__isObjectLike_js__[\"a\" /* default */])(value) && __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__getTag_js__[\"a\" /* default */])(value) == mapTag;\n}\n/* harmony default export */ __webpack_exports__[\"a\"] = (baseIsMap);\n// ./~/lodash-es/_baseIsMap.js\n// module id = 647\n// module chunks = 0 1\n//# sourceURL=scratch:///./~/lodash-es/_baseIsMap.js?");
+ })

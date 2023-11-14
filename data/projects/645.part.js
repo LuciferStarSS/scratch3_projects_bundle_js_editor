@@ -1,0 +1,5 @@
+/* 645 */
+ (function(module, __webpack_exports__, __webpack_require__) {
+"use strict";
+eval(" var __WEBPACK_IMPORTED_MODULE_0__isObject_js__ = __webpack_require__(264);\n/** Built-in value references. */\nvar objectCreate = Object.create;\n/**\n * The base implementation of `_.create` without support for assigning\n * properties to the created object.\n *\n * @private\n * @param {Object} proto The object to inherit from.\n * @returns {Object} Returns the new object.\n */\nvar baseCreate = (function() {\n  function object() {}\n  return function(proto) {\n    if (!__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__isObject_js__[\"a\" /* default */])(proto)) {\n      return {};\n    }\n    if (objectCreate) {\n      return objectCreate(proto);\n    }\n    object.prototype = proto;\n    var result = new object;\n    object.prototype = undefined;\n    return result;\n  };\n}());\n/* harmony default export */ __webpack_exports__[\"a\"] = (baseCreate);\n// ./~/lodash-es/_baseCreate.js\n// module id = 645\n// module chunks = 0 1\n//# sourceURL=scratch:///./~/lodash-es/_baseCreate.js?");
+ })

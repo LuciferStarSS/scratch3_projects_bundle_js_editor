@@ -1,0 +1,4 @@
+/* 620 */
+ (function(module, exports) {
+eval("var supportsArgumentsClass = (function(){\n  return Object.prototype.toString.call(arguments)\n})() == '[object Arguments]';\nexports = module.exports = supportsArgumentsClass ? supported : unsupported;\nexports.supported = supported;\nfunction supported(object) {\n  return Object.prototype.toString.call(object) == '[object Arguments]';\n};\nexports.unsupported = unsupported;\nfunction unsupported(object){\n  return object &&\n    typeof object == 'object' &&\n    typeof object.length == 'number' &&\n    Object.prototype.hasOwnProperty.call(object, 'callee') &&\n    !Object.prototype.propertyIsEnumerable.call(object, 'callee') ||\n    false;\n};\n// ./~/deep-equal/lib/is_arguments.js\n// module id = 620\n// module chunks = 0 8\n//# sourceURL=scratch:///./~/deep-equal/lib/is_arguments.js?");
+ })
