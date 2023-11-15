@@ -1,7 +1,7 @@
 # scratch3_projects_bundle_js_editor
 An Editor to modify the code/resource in projects.bundle.js of Scratch3.0.
 
-我的Scratch3.0 for Class(https://github.com/LuciferStarSS/Scratch3.0_for_class)项目里，有一个./js/projects.bundle.js文件，
+我的Scratch3.0 for Class ( https://github.com/LuciferStarSS/Scratch3.0_for_class ) 项目里，有一个./js/projects.bundle.js文件，
 这个文件，包含了很多我不需要的组件；
 这个工具，可以快速有效地执行剔除操作。
 
