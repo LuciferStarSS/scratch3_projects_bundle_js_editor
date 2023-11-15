@@ -1,4 +1,4 @@
-var bChanged=false;
+﻿var bChanged=false;
 var nID=0;
 var nType=0;
 
