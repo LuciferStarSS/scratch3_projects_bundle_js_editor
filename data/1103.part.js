@@ -1,1 +1,0 @@
-/* 1103 */\n \n(function(module, exports, __webpack_require__) {\nmodule.exports = function() {\n  return new Worker(__webpack_require__.p + \"extension-worker.js\");\n};\n })
