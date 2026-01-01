@@ -1,0 +1,1 @@
+/* 44 */\n (function(module, exports) {\nvar g;\n\ng = (function() {\n\treturn this;\n})();\ntry {\n\t\n\tg = g || new Function(\"return this\")();\n} catch (e) {\n\t\n\tif (typeof window === \"object\") g = window;\n}\n\n\n\nmodule.exports = g;\n })

@@ -1,0 +1,1 @@
+/* 45 */\n (function(module, exports) {\n/**\n * Types of block\n * @enum {string}\n */\nvar BlockType = {\n \n  BOOLEAN: 'Boolean',\n \n  BUTTON: 'button',\n \n  COMMAND: 'command',\n \n  CONDITIONAL: 'conditional',\n \n  EVENT: 'event',\n \n  HAT: 'hat',\n \n  LOOP: 'loop',\n \n  REPORTER: 'reporter'\n};\nmodule.exports = BlockType;\n })
