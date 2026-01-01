@@ -1,0 +1,1 @@
+/* 614 */\n (function(module, exports) {\nmodule.exports =\"./static/assets/49977a0d3680d3a72955df57e5a15afb.svg\";\n })
