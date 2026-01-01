@@ -1,0 +1,1 @@
+/* 506 */\n (function(module, exports, __webpack_require__) {\n\"use strict\";\nvar objectHasOwn = Object.prototype.hasOwnProperty\nmodule.exports = function(object, propertyName){\n    return objectHasOwn.call(object, propertyName)\n}\n })

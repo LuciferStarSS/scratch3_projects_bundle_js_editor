@@ -1,0 +1,1 @@
+/* 505 */\n (function(module, exports, __webpack_require__) {\n\"use strict\";\nvar separate = __webpack_require__(1382)\nmodule.exports = function(name){\n   return separate(name).toLowerCase()\n}\n })

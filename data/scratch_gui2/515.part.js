@@ -1,0 +1,1 @@
+/* 515 */\n (function(module, exports, __webpack_require__) {\n\nvar toInteger = __webpack_require__(324);\nvar min = Math.min;\nmodule.exports = function (it) {\n  return it > 0 ? min(toInteger(it), 0x1fffffffffffff) : 0; \n};\n })
