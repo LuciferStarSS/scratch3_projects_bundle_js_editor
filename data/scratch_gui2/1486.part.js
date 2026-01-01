@@ -1,0 +1,1 @@
+/* 1486 */\n (function(module, exports) {\nmodule.exports =\"./static/assets/1486theiconofthewirelessswitches.svg\";\n })

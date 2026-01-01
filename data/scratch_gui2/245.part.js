@@ -1,0 +1,1 @@
+/* 245 */\n (function(module, exports, __webpack_require__) {\n/**\n * @fileOverview Scratch Audio is divided into a single AudioEngine, that\n * handles global functionality, and AudioPlayers, belonging to individual\n * sprites and clones.\n */\nvar AudioEngine = __webpack_require__(1225);\nmodule.exports = AudioEngine;\n })
