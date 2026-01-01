@@ -1,0 +1,1 @@
+/* 230 */\n (function(module, exports) {\n/** @module RenderConstants */\n/**\n * Various constants meant for use throughout the renderer.\n * @enum\n */\nmodule.exports = {\n \n  ID_NONE: -1,\n \n  SKIN_SHARE_SOFT_LIMIT: 301,\n \n  Events: {\n   \n    NativeSizeChanged: 'NativeSizeChanged'\n  }\n};\n })
