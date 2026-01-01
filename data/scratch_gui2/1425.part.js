@@ -1,0 +1,1 @@
+/* 1425 */\n (function(module, exports, __webpack_require__) {\n\"use strict\";\nexports.__esModule = true;\nexports.default = void 0;\nvar _default = !!(typeof window !== 'undefined' && window.document && window.document.createElement);\nexports.default = _default;\nmodule.exports = exports[\"default\"];\n })
