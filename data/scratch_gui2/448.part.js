@@ -1,0 +1,1 @@
+/* 448 */\n (function(module, exports, __webpack_require__) {\n\"use strict\";\nvar implementation = __webpack_require__(446);\nvar zeroWidthSpace = '\\u200b';\nmodule.exports = function getPolyfill() {\n\tif (String.prototype.trim && zeroWidthSpace.trim() === zeroWidthSpace) {\n\t\treturn String.prototype.trim;\n\t}\n\treturn implementation;\n};\n })
