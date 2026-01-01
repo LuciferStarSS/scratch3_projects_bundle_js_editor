@@ -1,1 +1,0 @@
-/* 1402 */\n (function(module, exports) {\nmodule.exports = function (done, value) {\n  return { value: value, done: !!done };\n};\n })
