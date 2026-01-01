@@ -1,0 +1,1 @@
+/* 1274 */\n (function(module) {\nmodule.exports = JSON.parse(\"{\\\"Other\\\":0,\\\"CR\\\":1,\\\"LF\\\":2,\\\"Control\\\":3,\\\"Extend\\\":4,\\\"Regional_Indicator\\\":5,\\\"SpacingMark\\\":6,\\\"L\\\":7,\\\"V\\\":8,\\\"T\\\":9,\\\"LV\\\":10,\\\"LVT\\\":11}\");\n })
