@@ -1,0 +1,1 @@
+/* 951 */\n (function(module, exports, __webpack_require__) {\nvar Transform = __webpack_require__(112),\n    cache = [ ];\nvar logger = new Transform();\nlogger.write = function(name, level, args) {\n  cache.push([ name, level, args ]);\n};\n\nlogger.get = function() { return cache; };\nlogger.empty = function() { cache = []; };\nmodule.exports = logger;\n })
