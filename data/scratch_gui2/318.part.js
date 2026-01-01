@@ -1,0 +1,1 @@
+/* 318 */\n (function(module, exports) {\n\nmodule.exports = function (it) {\n  if (it == undefined) throw TypeError(\"Can't call method on  \" + it);\n  return it;\n};\n })
