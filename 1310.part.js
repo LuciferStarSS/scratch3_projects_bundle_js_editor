@@ -1,1 +1,0 @@
-/* 1310 */\n (function(module, exports, __webpack_require__) {\n\"use strict\";\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\nexports.default = function (target) {\n  target.prototype.isCapture = function (currentTarget) {\n    return currentTarget && currentTarget.getAttribute('data-iscapture') === 'true' || this.props.isCapture || false;\n  };\n};\n })
