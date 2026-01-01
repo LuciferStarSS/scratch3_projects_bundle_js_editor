@@ -1,11 +1,16 @@
 # scratch3_projects_bundle_js_editor
-An Editor to modify the code/resource in projects.bundle.js of Scratch3.0.
+
+一个针对Scratch3.0内核的编辑器。
 
 ![Image text](img/UI.png)
 
-我的Scratch3.0 for Class ( https://github.com/LuciferStarSS/Scratch3.0_for_class ) 项目里，有一个./js/projects.bundle.js文件，
-这个文件，包含了很多我不需要的组件；
-这个工具，可以快速有效地执行剔除操作。
+在Scratch3.0 for Class ( https://github.com/LuciferStarSS/Scratch3.0_for_class ) 项目里，有一个./editor/js/projects.bundle.js文件，这个文件是整个Scratch3.0的内核。
+
+但在这个文件里，有很多我不需要的组件。
+
+这个工具，可以快速有效地剔除不需要的组件。
+
+注：当前配置数据已经是最简版本了。
 
 目录说明：
 
