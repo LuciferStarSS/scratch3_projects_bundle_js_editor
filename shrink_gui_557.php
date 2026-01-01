@@ -27,61 +27,40 @@ for($i=0;$i<$idc;$i++)
    {
       $str=file_get_contents("./data/".$filename."/".$id.".part.js");
 
-if($id==56 || $id==103 || $id==931 || $id==933 || $id==934 || $id==1281 ||  $id==1267 )//OK增加对非注释结尾的“\\n”的处理
-{
-//echo $str."\r\n";
-      $str=str_replace('\\n','<bbrr>',$str);
-
-//      preg_match_all("/\/\*([^^]*?)\*\//",$str,$m);
-  //    print_r($m[0]);
-      preg_match_all("/\/\/ ([^^]*?)\\\\n/",$str,$m);
-      $str=str_replace($m[0],'\n',$str);
-      $str=str_replace('<bbrr>','\\n',$str);
-
-//echo $str;
-
-}
-else if($id==1219 || $id==1248)// OK  处理如下异情结构：//comments\\n
-{
-//echo $i."\r\n+++++++++++++++++\r\n";
-
-      preg_match_all("/\/\/ ([^^]*?)\\\\n/",$str,$m);
-      $str=str_replace($m[0],'',$str);
-
-//print_r($m[0]);
-//echo $i."\r\n+++++++++++++++++\r\n";
- 
-}
-else if($id==1322 || $id==1249)
-{
+      if($id==56 || $id==103 || $id==931 || $id==933 || $id==934 || $id==1281 ||  $id==1267 )//OK增加对非注释结尾的“\\n”的处理
+      {
+         $str=str_replace('\\n','<bbrr>',$str);
+         preg_match_all("/\/\/ ([^^]*?)\\\\n/",$str,$m);
+         $str=str_replace($m[0],'\n',$str);
+         $str=str_replace('<bbrr>','\\n',$str);
+      }
+      else if($id==1219 || $id==1248)// OK  处理如下异情结构：//comments\\n
+      {
+         preg_match_all("/\/\/ ([^^]*?)\\\\n/",$str,$m);
+         $str=str_replace($m[0],'',$str);
+      }
+      else if($id==1322 || $id==1249)
+      {
 
 
-}
-else//普通文件
-{
-       //      preg_match_all("/\/\*([^^]*?)\*\//",$str,$m);
-       //   $str=str_replace($m[0],"",$str);
-      preg_match_all("/\/\/ ([^^]*?)\\\\n/",$str,$m);
-      $str=str_replace($m[0],'\n',$str);
-//      print_r($m[0]);
-}
+      }
+      else//普通文件
+      {
+         preg_match_all("/\/\/ ([^^]*?)\\\\n/",$str,$m);
+         $str=str_replace($m[0],'\n',$str);
+      }
 
-if($id!=135 && $id!=144 && $id!=193 && $id!=219 && $id!=225 && $id!=309 && $id!=426)// && $id!=450)
-{
-      preg_match_all("/ \/\*([^^]*?)\*\//",$str,$m);
-//print_r($m[0]);
-      $str=str_replace($m[0],"",$str);
+      if($id!=135 && $id!=144 && $id!=193 && $id!=219 && $id!=225 && $id!=309 && $id!=426)// && $id!=450)
+      {
+         preg_match_all("/ \/\*([^^]*?)\*\//",$str,$m);
+         $str=str_replace($m[0],"",$str);
 
-
-}
-else
-{
-      preg_match_all("/\/\*([^^]*?)\*\//",$str,$m);
-//print_r($m[0]);
-      $str=str_replace($m[0],"",$str);
-
-}
-
+      }
+      else
+      {
+         preg_match_all("/\/\*([^^]*?)\*\//",$str,$m);
+         $str=str_replace($m[0],"",$str);
+      }
 
       file_put_contents("./data/".$filename."2/".$id.".part.js",$str);
    }

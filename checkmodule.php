@@ -1,0 +1,13 @@
+<?php
+$d=file_get_contents("../editor/js/projects.bundle.js");
+preg_match_all("/__webpack_require__\(([0-9]*)\)/",$d,$m);
+//print_r($m);
+$mc=count($m[0]);
+$result=Array();
+for($i=0;$i<$mc;$i++)
+{
+   $result[$m[1][$i]]=isset($result[$m[1][$i]])?($result[$m[1][$i]]+1):1;
+}
+ksort($result);
+print_r($result);
+?>

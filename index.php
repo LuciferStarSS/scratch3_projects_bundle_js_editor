@@ -35,7 +35,7 @@ foreach($indexArr as $key=>$value)
       <input type=button value="生成" title="数据将直接覆盖目标文件，请谨慎操作。" onclick="createGUI();"><br>
       <select size=350 style="height:350px;width:442px;" id=GUI name=GUI  onclick="showGUIFile(this);">
 <?php
-//读取第577号模块（Scratch GUI）的拆分数据
+//读取第557号模块（Scratch GUI）的拆分数据
 $index_gui=file_get_contents("./data/index_gui.inc.php");
 $indexArr=unserialize($index_gui);
 include "config.inc.php";

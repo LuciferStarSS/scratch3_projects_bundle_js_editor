@@ -1,4 +1,5 @@
 ﻿<?php
+error_reporting(E_ALL);
 $ids=@file_get_contents("./data/scratch_gui_ready.dat");
 if($ids!="OK") exit("GUI模块有数据已更新，请先“生成”GUI模块。");
 
@@ -38,7 +39,17 @@ eval("");
       }
       else						//未被排除，正常输出
       {
-         $filedata.=file_get_contents("./data/".$filename."./".$i.".part.js").",\n";
+         $str=file_get_contents("./data/".$filename."/".$i.".part.js");//简单去除一些注释/*注释*/
+       preg_match_all("/ \/\*([^^]*?)\*\//",$str,$m);
+         //print_r($m);
+         $str=str_replace($m[0],"",$str);
+
+         //preg_match_all("/ \/\/([^^]*?)\\n/",$str,$m);
+         //print_r($m);
+         //$str=str_replace($m[0],"",$str);
+
+         $filedata.=$str.",\n";
+
       }
    }
    else							//对应位置没有数据，留空
@@ -49,7 +60,9 @@ eval("");
 
 $filedata=trim($filedata,",\n");			//清掉最后一次的逗号和换行
 
-$filedata.="\n],[993]);";				//数据位
+$filedata.="\n],[993]);";
+				//数据位
+//file_put_contents("./".$filename.".bundle.js",$filedata);	//保存文件
 
 file_put_contents($scratch_editor_path."/js/".$filename.".bundle.js",$filedata);	//保存文件
 echo "OK\n已屏蔽的组件ID如下：".trim($bannedList,",").".";
