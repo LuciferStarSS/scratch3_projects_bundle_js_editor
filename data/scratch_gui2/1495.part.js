@@ -1,0 +1,1 @@
+/* 1495 */\n (function(module, exports) {\nmodule.exports =\"./static/assets/1494machinelearning000000000.svg\";\n })

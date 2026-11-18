@@ -301,10 +301,11 @@ function showPROJFile(f)
 
 
    nType=1;
+   var bs=document.getElementById("bSel"); if(bs) bs.innerText=nID;
    if(nID==557)
    {
       //alert("此文件需要用另一个编辑器处理。");
-      document.getElementById("GUIDIV").style.visibility="visible";
+       document.getElementById("GUIDIV").style.display="";
       //document.getElementById("GUIDIV").style.width=f.offsetWidth;
       //document.getElementById("GUI").style.width=f.offsetWidth;
       document.getElementById("find_gui").style.visibility="visible";
@@ -313,7 +314,7 @@ function showPROJFile(f)
    }
    else
    {
-      document.getElementById("GUIDIV").style.visibility="hidden";
+       document.getElementById("GUIDIV").style.display="none";
       document.getElementById("find_gui").style.visibility="hidden";
       document.getElementById("div_code_editor").style.visibility="hidden";
       $.post("./getFile_proj.php?t=" + Math.random(), { "F": f.value}, function (data) {
@@ -352,14 +353,15 @@ function showGUIFile(f)
 
    nID=f.value;
    nType=2;
-   if(nID==557)
-   {
+   var bs2=document.getElementById("bSel"); if(bs2) bs2.innerText=nID;
+   //if(nID==557)
+   //{
       //alert("此文件需要用另一个编辑器处理。");
-      document.getElementById("GUIDIV").style.visibility="visible";
+   //   document.getElementById("GUIDIV").style.visibility="visible";
       //document.getElementById("find_gui").style.visibility="visible";
-   }
-   else
-   {
+   //}
+   //else
+   //{
       //document.getElementById("GUIDIV").style.visibility="hidden";
       document.getElementById("div_code_editor").style.visibility="hidden";
       $.post("./getFile_gui.php?t=" + Math.random(), { "F": f.value}, function (data) {
@@ -369,7 +371,7 @@ function showGUIFile(f)
             //hljs.highlightAll();
          }
    
-   });
+      });
 
       var sel=document.getElementById("GUI");
       if(sel.selectedIndex!=-1)
@@ -377,7 +379,7 @@ function showGUIFile(f)
          var strHolder=sel.options[sel.selectedIndex].text.split("|")[1];
          document.getElementById("MEMOINFO").innerText=strHolder==undefined?"":strHolder;
       }
-   }
+//   }
 }
 
 
@@ -387,11 +389,7 @@ function editCode(o)
    editor.style.visibility="visible";
    var t=document.getElementById("CODE_EDITOR");
 
-   t.value=o.innerText;   
-   editor.style.left=o.parentElement.parentElement.offsetLeft;
-   editor.style.top=o.parentElement.parentElement.offsetTop+13;
-   editor.style.height=t.style.height=o.offsetHeight;
-   editor.style.width=t.style.width=o.offsetWidth;
+   t.value=o.innerText;
 
    if(nType==2) alert("注意，第557号模块里的代码，所有的双引号，要用转义符。\n“\"” 应写成： “\\\"”");
    //t.focus();

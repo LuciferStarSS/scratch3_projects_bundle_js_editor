@@ -1,0 +1,5 @@
+/* 643 */
+ (function(module, __webpack_exports__, __webpack_require__) {
+"use strict";
+eval(" var __WEBPACK_IMPORTED_MODULE_0__copyObject_js__ = __webpack_require__(303);\n var __WEBPACK_IMPORTED_MODULE_1__keys_js__ = __webpack_require__(465);\n/**\n * The base implementation of `_.assign` without support for multiple sources\n * or `customizer` functions.\n *\n * @private\n * @param {Object} object The destination object.\n * @param {Object} source The source object.\n * @returns {Object} Returns `object`.\n */\nfunction baseAssign(object, source) {\n  return object && __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__copyObject_js__[\"a\" /* default */])(source, __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__keys_js__[\"a\" /* default */])(source), object);\n}\n/* harmony default export */ __webpack_exports__[\"a\"] = (baseAssign);\n// ./~/lodash-es/_baseAssign.js\n// module id = 643\n// module chunks = 0 1\n//# sourceURL=scratch:///./~/lodash-es/_baseAssign.js?");
+ })

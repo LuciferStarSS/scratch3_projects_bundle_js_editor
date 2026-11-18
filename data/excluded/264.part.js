@@ -1,0 +1,5 @@
+/* 264 */
+ (function(module, __webpack_exports__, __webpack_require__) {
+"use strict";
+eval("/**\n * Checks if `value` is the\n * [language type](http://www.ecma-international.org/ecma-262/7.0/#sec-ecmascript-language-types)\n * of `Object`. (e.g. arrays, functions, objects, regexes, `new Number(0)`, and `new String('')`)\n *\n * @static\n * @memberOf _\n * @since 0.1.0\n * @category Lang\n * @param {*} value The value to check.\n * @returns {boolean} Returns `true` if `value` is an object, else `false`.\n * @example\n *\n * _.isObject({});\n * // => true\n *\n * _.isObject([1, 2, 3]);\n * // => true\n *\n * _.isObject(_.noop);\n * // => true\n *\n * _.isObject(null);\n * // => false\n */\nfunction isObject(value) {\n  var type = typeof value;\n  return value != null && (type == 'object' || type == 'function');\n}\n/* harmony default export */ __webpack_exports__[\"a\"] = (isObject);\n// ./~/lodash-es/isObject.js\n// module id = 264\n// module chunks = 0 1\n//# sourceURL=scratch:///./~/lodash-es/isObject.js?");
+ })

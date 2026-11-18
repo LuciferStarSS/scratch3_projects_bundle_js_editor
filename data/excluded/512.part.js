@@ -1,0 +1,5 @@
+/* 512 */
+ (function(module, __webpack_exports__, __webpack_require__) {
+"use strict";
+eval("/** Used for built-in method references. */\nvar funcProto = Function.prototype;\n/** Used to resolve the decompiled source of functions. */\nvar funcToString = funcProto.toString;\n/**\n * Converts `func` to its source code.\n *\n * @private\n * @param {Function} func The function to convert.\n * @returns {string} Returns the source code.\n */\nfunction toSource(func) {\n  if (func != null) {\n    try {\n      return funcToString.call(func);\n    } catch (e) {}\n    try {\n      return (func + '');\n    } catch (e) {}\n  }\n  return '';\n}\n/* harmony default export */ __webpack_exports__[\"a\"] = (toSource);\n// ./~/lodash-es/_toSource.js\n// module id = 512\n// module chunks = 0 1\n//# sourceURL=scratch:///./~/lodash-es/_toSource.js?");
+ })

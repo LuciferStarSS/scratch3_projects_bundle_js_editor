@@ -1,0 +1,1 @@
+/* 1209 */\n (function(module, exports) {\nmodule.exports = function() {\n\tthrow new Error(\"define cannot be used indirect\");\n};\n })

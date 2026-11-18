@@ -1,0 +1,1 @@
+/* 1485 */\n (function(module, exports) {\nmodule.exports =\"./static/assets/1485iotnetworkswitchpicture00000.png\";\n })

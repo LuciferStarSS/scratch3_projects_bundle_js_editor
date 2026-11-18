@@ -1,0 +1,5 @@
+/* 781 */
+ (function(module, exports, __webpack_require__) {
+"use strict";
+eval("\nvar GenericWorker = __webpack_require__(251);\nvar crc32 = __webpack_require__(632);\nvar utils = __webpack_require__(165);\n/**\n * A worker which calculate the crc32 of the data flowing through.\n * @constructor\n */\nfunction Crc32Probe() {\n    GenericWorker.call(this, \"Crc32Probe\");\n    this.withStreamInfo(\"crc32\", 0);\n}\nutils.inherits(Crc32Probe, GenericWorker);\n/**\n * @see GenericWorker.processChunk\n */\nCrc32Probe.prototype.processChunk = function (chunk) {\n    this.streamInfo.crc32 = crc32(chunk.data, this.streamInfo.crc32 || 0);\n    this.push(chunk);\n};\nmodule.exports = Crc32Probe;\n// ./~/jszip/lib/stream/Crc32Probe.js\n// module id = 781\n// module chunks = 0\n//# sourceURL=scratch:///./~/jszip/lib/stream/Crc32Probe.js?");
+ })

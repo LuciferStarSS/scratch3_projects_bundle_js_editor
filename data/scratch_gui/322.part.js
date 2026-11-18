@@ -1,0 +1,1 @@
+/* 322 */\n (function(module, exports, __webpack_require__) {\nvar isObject = __webpack_require__(118);\nvar document = __webpack_require__(66).document;\n// typeof document.createElement is 'object' in old IE\nvar is = isObject(document) && isObject(document.createElement);\nmodule.exports = function (it) {\n  return is ? document.createElement(it) : {};\n};\n })

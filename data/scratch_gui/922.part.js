@@ -1,0 +1,1 @@
+/* 922 */\n (function(module, exports, __webpack_require__) {\n\"use strict\";\n(function(setImmediate) {\nmodule.exports = typeof setImmediate === 'function' ? setImmediate :\n\tfunction setImmediate() {\n\t\tvar args = [].slice.apply(arguments);\n\t\targs.splice(1, 0, 0);\n\t\tsetTimeout.apply(null, args);\n\t};\n}.call(this, __webpack_require__(405).setImmediate))\n })

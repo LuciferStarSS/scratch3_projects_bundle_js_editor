@@ -1,0 +1,1 @@
+/* 1117 */\n (function(module, exports, __webpack_require__) {\nvar isObject = __webpack_require__(301);\nmodule.exports = function(it){\n  if(!isObject(it))throw TypeError(it + ' is not an object!');\n  return it;\n};\n })

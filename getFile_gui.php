@@ -8,7 +8,7 @@ if($fid!=="")
    {
       $str=file_get_contents("./data/".$filename."/".$fid.".part.js");
       //$str=str_replace("\n","\n",$str);
-      $str=str_replace('\n',"\n<br>",$str);
+      $str=str_replace('\n',"\n",$str);
       echo $str;
        
    }

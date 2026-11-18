@@ -1,0 +1,1 @@
+/* 1431 */\n (function(module, exports, __webpack_require__) {\n// check on default Array iterator\nvar Iterators = __webpack_require__(159);\nvar ITERATOR = __webpack_require__(67)('iterator');\nvar ArrayProto = Array.prototype;\nmodule.exports = function (it) {\n  return it !== undefined && (Iterators.Array === it || ArrayProto[ITERATOR] === it);\n};\n })

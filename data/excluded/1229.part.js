@@ -1,0 +1,4 @@
+/* 1229 */
+ (function(module, exports, __webpack_require__) {
+eval("var baseFlatten = __webpack_require__(1216);\n/**\n * Flattens `array` a single level deep.\n *\n * @static\n * @memberOf _\n * @since 0.1.0\n * @category Array\n * @param {Array} array The array to flatten.\n * @returns {Array} Returns the new flattened array.\n * @example\n *\n * _.flatten([1, [2, [3, [4]], 5]]);\n * // => [1, 2, [3, [4]], 5]\n */\nfunction flatten(array) {\n  var length = array == null ? 0 : array.length;\n  return length ? baseFlatten(array, 1) : [];\n}\nmodule.exports = flatten;\n// ./~/lodash/flatten.js\n// module id = 1229\n// module chunks = 0\n//# sourceURL=scratch:///./~/lodash/flatten.js?");
+ })

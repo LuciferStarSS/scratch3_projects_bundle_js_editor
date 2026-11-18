@@ -1,0 +1,4 @@
+/* 1215 */
+ (function(module, exports) {
+eval("/**\n * Appends the elements of `values` to `array`.\n *\n * @private\n * @param {Array} array The array to modify.\n * @param {Array} values The values to append.\n * @returns {Array} Returns `array`.\n */\nfunction arrayPush(array, values) {\n  var index = -1,\n      length = values.length,\n      offset = array.length;\n  while (++index < length) {\n    array[offset + index] = values[index];\n  }\n  return array;\n}\nmodule.exports = arrayPush;\n// ./~/lodash/_arrayPush.js\n// module id = 1215\n// module chunks = 0\n//# sourceURL=scratch:///./~/lodash/_arrayPush.js?");
+ })

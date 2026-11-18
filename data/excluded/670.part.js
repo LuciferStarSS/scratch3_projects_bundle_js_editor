@@ -1,0 +1,5 @@
+/* 670 */
+ (function(module, __webpack_exports__, __webpack_require__) {
+"use strict";
+eval(" var __WEBPACK_IMPORTED_MODULE_0__nativeCreate_js__ = __webpack_require__(305);\n/** Used to stand-in for `undefined` hash values. */\nvar HASH_UNDEFINED = '__lodash_hash_undefined__';\n/** Used for built-in method references. */\nvar objectProto = Object.prototype;\n/** Used to check objects for own properties. */\nvar hasOwnProperty = objectProto.hasOwnProperty;\n/**\n * Gets the hash value for `key`.\n *\n * @private\n * @name get\n * @memberOf Hash\n * @param {string} key The key of the value to get.\n * @returns {*} Returns the entry value.\n */\nfunction hashGet(key) {\n  var data = this.__data__;\n  if (__WEBPACK_IMPORTED_MODULE_0__nativeCreate_js__[\"a\" /* default */]) {\n    var result = data[key];\n    return result === HASH_UNDEFINED ? undefined : result;\n  }\n  return hasOwnProperty.call(data, key) ? data[key] : undefined;\n}\n/* harmony default export */ __webpack_exports__[\"a\"] = (hashGet);\n// ./~/lodash-es/_hashGet.js\n// module id = 670\n// module chunks = 0 1\n//# sourceURL=scratch:///./~/lodash-es/_hashGet.js?");
+ })

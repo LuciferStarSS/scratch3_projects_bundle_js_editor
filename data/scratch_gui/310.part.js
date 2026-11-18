@@ -1,0 +1,1 @@
+/* 310 */\n (function(module, exports) {\n/**\n * Enumeration of the supported data formats.\n * @enum {string}\n */\nvar DataFormat = {\n  JPG: 'jpg',\n  JSON: 'json',\n  MP3: 'mp3',\n  PNG: 'png',\n  SB2: 'sb2',\n  SB3: 'sb3',\n  SVG: 'svg',\n  WAV: 'wav'\n};\nmodule.exports = DataFormat;\n })

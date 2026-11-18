@@ -1,0 +1,5 @@
+/* 459 */
+ (function(module, __webpack_exports__, __webpack_require__) {
+"use strict";
+eval(" var __WEBPACK_IMPORTED_MODULE_0__Uint8Array_js__ = __webpack_require__(639);\n/**\n * Creates a clone of `arrayBuffer`.\n *\n * @private\n * @param {ArrayBuffer} arrayBuffer The array buffer to clone.\n * @returns {ArrayBuffer} Returns the cloned array buffer.\n */\nfunction cloneArrayBuffer(arrayBuffer) {\n  var result = new arrayBuffer.constructor(arrayBuffer.byteLength);\n  new __WEBPACK_IMPORTED_MODULE_0__Uint8Array_js__[\"a\" /* default */](result).set(new __WEBPACK_IMPORTED_MODULE_0__Uint8Array_js__[\"a\" /* default */](arrayBuffer));\n  return result;\n}\n/* harmony default export */ __webpack_exports__[\"a\"] = (cloneArrayBuffer);\n// ./~/lodash-es/_cloneArrayBuffer.js\n// module id = 459\n// module chunks = 0 1\n//# sourceURL=scratch:///./~/lodash-es/_cloneArrayBuffer.js?");
+ })

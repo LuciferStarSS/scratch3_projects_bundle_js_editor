@@ -1,0 +1,5 @@
+/* 18 */
+ (function(module, exports, __webpack_require__) {
+"use strict";
+eval("\nObject.defineProperty(exports, \"__esModule\", { value: true });\nvar tslib_1 = __webpack_require__(6);\n/** An error emitted by Sentry SDKs and related utilities. */\nvar SentryError = /** @class */ (function (_super) {\n    tslib_1.__extends(SentryError, _super);\n    function SentryError(message) {\n        var _newTarget = this.constructor;\n        var _this = _super.call(this, message) || this;\n        _this.message = message;\n        // tslint:disable:no-unsafe-any\n        _this.name = _newTarget.prototype.constructor.name;\n        Object.setPrototypeOf(_this, _newTarget.prototype);\n        return _this;\n    }\n    return SentryError;\n}(Error));\nexports.SentryError = SentryError;\n/*# sourceMappingURL=error.js.map*/\n// ./~/@sentry/core/dist/error.js\n// module id = 18\n// module chunks = 0 1 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39\n//# sourceURL=scratch:///./~/@sentry/core/dist/error.js?");
+ })
