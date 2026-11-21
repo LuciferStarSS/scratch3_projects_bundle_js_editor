@@ -6,18 +6,25 @@ $data=isset($_POST['D'])?$_POST["D"]:"";
 if($id && $type && $data)
 {
 
-   //echo $id."|".$type."|".$data;
-   $data=str_replace("\n<br>",'\n',$data);
+   //echo $id."|".$type."|".$data;exit();
    if($type==1)
    {
+      $data=str_replace("\n<br>",'\n',$data);
+
       file_put_contents("./data/projects/".$id.".part.js",$data);
       echo "OK";
    }
    else if($type==2)
    {
+      $data=str_replace("\n",'\n',$data);
+
       file_put_contents("./data/scratch_gui/".$id.".part.js",$data);
-      file_put_contents("./data/scratch_gui_modified.dat",@file_get_contents("./data/scratch_gui_modified.dat").$id."\n");
-      file_put_contents("./data/scratch_gui_ready.dat","");
+      include_once __DIR__."/manifest_lib.php";
+      $m = mf_gui_read();
+      if ($m === false) exit("manifest_gui.json");
+      if ($m === null) exit("manifest_gui.json");
+      $m = mf_gui_pending_merge($m, array((int)$id));
+      if(!mf_gui_write($m)) exit("manifest_gui.json ");
       echo "OK";
    }
    else echo "²ÎÊý´íÎó¡£";

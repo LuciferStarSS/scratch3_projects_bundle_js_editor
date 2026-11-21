@@ -1,493 +1,161 @@
-﻿<title>Scratch3.0源码编辑器</title>
-<link rel="stylesheet" type="text/css" href="./css/brush-trees-dark.min.css"/>
-<script src=./js/jquery.js></script>
-<!--script src=./js/highlight.js></script-->
-<!--script src=./js/javascript.min.js></script-->
-<!--Projects Module-->
-<div>
-   <div>
-      <input type=text title="输入字符，将自动匹配第一条数据。敲回车键，会从当前位置继续搜索。" id=find_prj name=find_prj autocomplete=off onclick="setSearchType(1);" onInput="doSearching_prj(this);" style="width:125px;">
-      <input type=button value="已阅" title="数据后面打√表示此文件已经过判读" onclick="setPRJStatus();"><input type=button value="隐藏" title="隐藏已被排除的组件，刷新网页将恢复。" onclick="hideModule();"><input type=button value="排除"  title="数据后面打×表示生成时排除" onclick="removeModule();"><input type=button value="设置备注" onclick="setPRJMemo();"><input type=button value="GUI模块"  title="打开Scratch GUI模块" onclick="showPROJFile(557);">
-      <input type=button value="生成"  title="为防止误操作，数据只生成在当前目录。生成后，请手动复制文件到指定位置。"  onclick="createProjects();"><br>
-      <select id=MID name=MID size=350 style="height:350px;width:442px" onclick="showPROJFile(this);">
 <?php
-$index_proj=file_get_contents("./data/index_projects.inc.php");
-$indexArr=unserialize($index_proj);
-foreach($indexArr as $key=>$value)
-{
-   echo "<option value=".$key.">".$key.":".$value."</option>";
+//读取模块索引（data/manifest_projects.json + data/manifest_gui.json），供列表渲染与顶栏统计
+include_once __DIR__."/manifest_lib.php";
+$pm = mf_prj_read();
+$gm = mf_gui_read();
+$prjCount = 0; $exCount = 0; $guiCount = 0;
+if (is_array($pm)) {
+   $prjCount = count($pm["modules"]);
+   foreach ($pm["modules"] as $mo) { if (strpos($mo["remark"], "×") !== false) $exCount++; }
 }
+if (is_array($gm)) $guiCount = (int)$gm["maxModule"] + 1;
 ?>
-      </select><br>
-   </div>
-   <!--Memo Info-->
-   <div name=MEMOINFO id=MEMOINFO style="width:442px;height:20px;background:lightyellow;text-align:center"></div>
-   <!--Projects Module - 557 - Scratch3.0 GUI -->
-   <div name=GUIDIV id=GUIDIV style="visibility:hidden">
-      <input type=text title="输入字符，将自动匹配第一条数据。敲回车键，会从当前位置继续搜索。" id=find_gui name=find_gui autocomplete=off onclick="setSearchType(2);"  onInput="doSearching_gui(this);" style="width:234px;">
-      <input type=button value="已阅" title="数据后面打√表示此文件已经过判读" onclick="setGUIStatus();"><input type=button value="设置备注" onclick="setGUIMemo();"><input type=button value="缩减" onclick="shrinkGUI();">
-
-      <input type=button value="生成" title="数据将直接覆盖目标文件，请谨慎操作。" onclick="createGUI();"><br>
-      <select size=350 style="height:350px;width:442px;" id=GUI name=GUI  onclick="showGUIFile(this);">
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta http-equiv="Cache-Control" content="no-store">
+<title>Scratch3.0 模块管理器</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;font:13px/1.55 "Segoe UI","Microsoft YaHei",sans-serif;color:#1c2b3a;background:#f4f9fe}
+.topbar{display:flex;align-items:center;gap:14px;padding:8px 14px;background:#fff;border-bottom:1px solid #dce8f5;position:sticky;top:0;z-index:5;flex-wrap:wrap}
+.brand{font-weight:700;font-size:15px;color:#2b7de1}
+.brand .sub{font-weight:400;font-size:12px;color:#6b7f95;margin-left:8px}
+.badges{display:flex;gap:6px;flex:1;flex-wrap:wrap}
+.badge{background:#eaf3fd;border:1px solid #d5e6f8;color:#35618f;border-radius:20px;padding:1px 10px;font-size:12px;white-space:nowrap}
+.badge b{color:#2b7de1}
+.acts{display:flex;gap:6px;align-items:center}
+.btn{border:1px solid #d5e6f8;background:#fff;color:#35618f;border-radius:8px;padding:5px 14px;font-size:13px;cursor:pointer;text-decoration:none}
+.btn:hover{background:#eaf3fd}
+.btn.primary{background:#2b7de1;border-color:#2b7de1;color:#fff}
+.btn.primary:hover{background:#1e6ccc}
+.btn.danger{color:#c0392b;border-color:#e7b9b4}
+.btn.danger:hover{background:#fdeaea}
+.btn.mini{padding:1px 8px;font-size:12px;border-radius:6px}
+main{display:flex;gap:10px;padding:10px;height:calc(100vh - 58px)}
+.pane{overflow:auto}
+#paneList{flex:5;min-width:470px;display:flex;flex-direction:column}
+#paneView{flex:7;display:flex;flex-direction:column;min-width:430px}
+.fs{background:#fff;border:1px solid #dce8f5;border-radius:12px;padding:10px 12px;display:flex;flex-direction:column}
+#fsPrj{flex:1.4;min-height:0}
+#GUIDIV{flex:1;min-height:0}
+.fs-t{font-weight:700;color:#2b7de1;font-size:13px;margin-bottom:8px;display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.hintline{font-size:12px;color:#6b7f95;font-weight:400}
+.toolrow{display:flex;gap:6px;align-items:center;flex-wrap:wrap;margin:2px 0 8px}
+.inp{border:1px solid #d5e6f8;border-radius:7px;padding:5px 8px;font:13px "Segoe UI","Microsoft YaHei",sans-serif;color:#1c2b3a;background:#fff;outline:none}
+.inp:focus{border-color:#2b7de1;box-shadow:0 0 0 2px #eaf3fd}
+#find_prj,#find_gui{flex:1;min-width:120px}
+.list{width:100%;border:1px solid #d5e6f8;border-radius:8px;padding:4px;font:12px/1.7 "Segoe UI","Microsoft YaHei",sans-serif;color:#1c2b3a;background:#fbfdff;outline:none;overflow:auto}
+.list:focus{border-color:#2b7de1;box-shadow:0 0 0 2px #eaf3fd}
+.list option{padding:1px 6px;border-radius:5px}
+#MID{flex:1;min-height:300px}
+#GUI{flex:1;min-height:200px}
+.viewwrap{position:relative;flex:1;display:flex;min-height:380px}
+.viewwrap pre{flex:1;margin:0;overflow:auto;background:#0f2237;color:#cfe3f7;border-radius:10px;padding:12px 14px;font:12px/1.6 Consolas,monospace;white-space:pre}
+.viewwrap pre code{font:inherit}
+#div_code_editor{position:absolute;inset:0;background:#0f2237;border-radius:10px;padding:8px 10px;display:flex;flex-direction:column;gap:6px;visibility:hidden}
+.ed-head{display:flex;justify-content:flex-end;align-items:center;gap:8px}
+.ed-head .hintline{color:#8fb6dd;margin-right:auto}
+#CODE_EDITOR{flex:1;background:#122c44;color:#cfe3f7;border:1px solid #2a4a6b;border-radius:8px;padding:8px 10px;font:12px/1.6 Consolas,monospace;outline:none;resize:none;white-space:pre;overflow:auto}
+#CODE_EDITOR:focus{border-color:#2b7de1;box-shadow:0 0 0 2px rgba(43,125,225,.25)}
+.memo{margin-top:4px;margin-bottom:4px;background:#eaf3fd;border:1px solid #d5e6f8;border-radius:8px;padding:5px 10px;font-size:12px;color:#35618f;text-align:center;min-height:22px;word-break:break-all}
+#EXCLUDED{position:fixed;inset:0;background:rgba(28,43,58,.38);backdrop-filter:blur(5px);visibility:hidden;z-index:50;display:flex;align-items:center;justify-content:center}
+.ex-box{background:rgba(255,255,255,.92);backdrop-filter:blur(18px);border:1px solid rgba(255,255,255,.65);border-radius:16px;box-shadow:0 20px 60px rgba(15,34,55,.35);padding:16px 18px;width:min(500px,92vw)}
+.ex-head{display:flex;align-items:center;gap:6px;font-weight:700;color:#2b7de1;margin-bottom:8px}
+.ex-head .btn{margin-left:auto}
+.ex-head b{color:#c0392b}
+#excludedlist{height:300px}
+.ex-tip{margin-top:8px}
+</style>
+<script src="./js/jquery.js"></script>
+<script src="./js/page_control.js?v=20261118b"></script>
+</head>
+<body>
+<header class="topbar">
+  <div class="brand">模块管理器<span class="sub">Scratch3.0核心文件编辑器</span></div>
+  <div class="badges">
+    <span class="badge">Projects 模块 <b><?php echo $prjCount; ?>个</b>（其中已排除 <b><?php echo $exCount; ?></b>个）</span>
+    <span class="badge">GUI 模块 <b><?php echo $guiCount; ?></b>个</span>
+  </div>
+  <div class="acts">
+    <a class="btn" href="add_extension.php" target="_blank" title="打开扩展构建器（新建/编辑/屏蔽自建扩展）">扩展管理</a>
+  </div>
+</header>
+<main>
+  <section class="pane" id="paneList">
+    <div class="fs" id="fsPrj">
+      <div class="fs-t">① Projects 模块<span class="hintline">选中条目在右侧查看/编辑代码；备注含 × 的模块生成时排除；未选中条目点“排除”查看已排除列表</span></div>
+      <div class="toolrow">
+        <input type="text" class="inp" title="输入字符，将自动匹配第一条数据。敲回车键，会从当前位置继续搜索。" id="find_prj" autocomplete="off" placeholder="搜索模块号 / 路径 / 备注" onclick="setSearchType(1);" onInput="doSearching_prj(this);">
+        <button class="btn mini" title="数据后面打√表示此文件已经过判读" onclick="setPRJStatus();">已阅</button>
+        <button class="btn mini" title="隐藏已被排除的组件，刷新网页将恢复。" onclick="hideModule();">隐藏</button>
+        <button class="btn mini danger" title="选中条目：打 × 表示生成时排除（再点一次恢复）；未选中条目：列出当前已排除组件" onclick="removeModule();">排除</button>
+        <button class="btn mini" onclick="setPRJMemo();" title="给选中的文件添加备注信息，添加备注后便于搜索">设置备注</button>
+        <button class="btn mini" title="打开 Scratch GUI 模块列表，这里是Scratch3.0的内核所在。" onclick="showPROJFile(557);">GUI 模块</button>
+        <button class="btn mini primary" title="当前项目与Scratch3.0的editor文件夹并列，生成的文件将保存到../editor/js/projects.bundle.js" onclick="createProjects();">生成</button>
+      </div>
+      <select id="MID" name="MID" size="18" class="list" onclick="showPROJFile(this);">
 <?php
-$index_gui=file_get_contents("./data/index_gui.inc.php");
-$indexArr=unserialize($index_gui);
-include "config.inc.php";
-for($i=0;$i<=$gui_files;$i++)
+if (!is_array($pm))
+   echo "        <option value=0>manifest_projects.json 读取失败</option>";
+else
+foreach($pm["modules"] as $mo)
 {
-   if(isset($indexArr[$i]))
-      echo "<option value=".$i.">".$i.":".$indexArr[$i]."</option>";
-   else
-      echo "<option value=".$i.">".$i.":</option>";
-
+   echo "        <option value=".$mo["n"].">".$mo["n"].":".$mo["remark"]."</option>";
 }
 ?>
       </select>
-   </div>
-   <!--Code Viewer-->
-   <div>
-      <div style="width: 950px;height: 596px;position: absolute;left: 450px;top: -5px;">
-        <pre><code title="单击可编辑代码" id=viewer name=viewer  onclick="editCode(this);" class="hljs language-javascript"></code></pre>
+    </div>
+    <div class="memo" id="MEMOINFO" title="当前选中条目的备注/操作反馈"></div>
+    <div class="fs" id="GUIDIV" style="display:none">
+      <div class="fs-t">② GUI 模块（557 · Scratch GUI）<span class="hintline">缩减=把待缩减模块并回文件；生成=直接覆盖目标文件，请谨慎操作</span></div>
+      <div class="toolrow">
+        <input type="text" class="inp" title="输入字符，将自动匹配第一条数据。敲回车键，会从当前位置继续搜索。" id="find_gui" autocomplete="off" placeholder="搜索模块号 / 备注" onclick="setSearchType(2);" onInput="doSearching_gui(this);">
+        <button class="btn mini" title="数据后面打√表示此文件已经过判读" onclick="setGUIStatus();">已阅</button>
+        <button class="btn mini" onclick="setGUIMemo();" title="给选中的文件添加备注信息，添加备注后便于搜索">设置备注</button>
+        <button class="btn mini" onclick="shrinkGUI();" "代码中有大量的注释，如果清除，可以降低文件大小，加快传输速度，不过部分组件的版权信息将被抹除。">缩减</button>
+        <button class="btn mini primary" title="数据将直接覆盖目标文件，请谨慎操作。" onclick="createGUI();">生成</button>
       </div>
-      <!--Code Editor-->
-      <div id=div_code_editor style="width: 800px;height: 596px;position: absolute;left: 460px;top: 0px;visibility:hidden">
-        <textarea id="CODE_EDITOR" name="CODE_EDITOR" oninput="setChanged();" style="position: absolute;top:0px"></textarea>
-        <input type=button value="保存" title="数据将直接覆盖目标文件，请谨慎操作。" style="position: absolute; right: 0px; top: 0px;" onclick=saveCode(this);></input>
+      <select size="14" class="list" id="GUI" name="GUI" onclick="showGUIFile(this);">
+<?php
+if (!is_array($gm))
+   echo "        <option value=0>manifest_gui.json 读取失败</option>";
+else
+{
+$remarks=$gm["remarks"];
+for($i=0;$i<=$gm["maxModule"];$i++)
+{
+   if(isset($remarks[$i]))			//检测是否有备注信息
+      echo "        <option value=".$i.">".$i.":".$remarks[$i]."</option>";	//添加备注信息
+   else
+      echo "        <option value=".$i.">".$i.":</option>";
+}
+}
+?>
+      </select>
+    </div>
+  </section>
+  <section class="pane" id="paneView">
+    <div class="fs" id="fsCode">
+      <div class="fs-t">代码查看<span class="hintline">单击代码进入编辑；未保存切换模块会提示</span></div>
+      <div class="viewwrap">
+        <pre><code title="单击可编辑代码" id="viewer" onclick="editCode(this);" class="language-javascript"></code></pre>
+        <div id="div_code_editor">
+          <div class="ed-head"><span class="hintline">代码编辑中</span><button class="btn mini primary" title="数据将直接覆盖目标文件，请谨慎操作。" onclick="saveCode(this);">保存</button></div>
+          <textarea id="CODE_EDITOR" oninput="setChanged();" spellcheck="false"></textarea>
+        </div>
       </div>
-   </div>
-   <!--Excluded Module List-->
-   <div id=EXCLUDED style="position: absolute;visibility: hidden;top: 34px;left: 450px;height:744px;background:cornsilk;font-size: 14px;">
-      <span>
-      &nbsp;如要排除某个组件，请先选择该条数据后再执行本操作。<br>&nbsp;当前已排除组件<span id=total style="color:red"></span>个：
-      </span><br>
-      <select id=excludedlist name=excludedlist size=30  style="height:704px;width:442px" ></select>
-      <input type=button  style="position: absolute; right: 10px; top: 8px;" onclick="this.parentElement.style.visibility='hidden'" value='关闭'>
-   </div>
-
+    </div>
+  </section>
+</main>
+<div id="EXCLUDED">
+  <div class="ex-box">
+    <div class="ex-head">当前已排除组件 <b id="total">0</b> 个<button class="btn mini" onclick="document.getElementById('EXCLUDED').style.visibility='hidden'">关闭</button></div>
+    <select id="excludedlist" size="14" class="list"></select>
+    <div class="hintline ex-tip">如要排除某个组件，请先在①区选择该条数据后再执行“排除”；对已排除条目再点一次“排除”可恢复。</div>
+  </div>
 </div>
-<script>
-var bChanged=false;
-var nID=0;
-var nType=0;
-
-$(document).ready(function(){
-   $("input").keydown(function (event){
-      if(event.keyCode == 13){
-        if(nType==1)
-           doSearching_prj2();
-        else if(nType==2)
-           doSearching_gui2();
-      }
-   });
-});
-
-function shrinkGUI()
-{
-   $.get("./shrink_gui_557.php?t=" + Math.random(), function (data) {
-      alert(data);
-   });
-}
-
-
-function createProjects()
-{
-   $.get("./build_projects.php?t=" + Math.random(), function (data) {
-      alert(data);
-   });
-}
-
-function createGUI()
-{
-   $.get("./build_gui_557.php?t=" + Math.random(), function (data) {
-      alert(data);
-   });
-}
-
-function hideModule()
-{
-   var sel=document.getElementById("MID");
-   for(var i=sel.length-1;i>-1;i--)
-   {
-      if(sel.options[i].text.indexOf("×")>-1)
-      {
-         sel.options[i].remove();
-      }
-   }
-}
-
-function removeModule()
-{
-   var sel=document.getElementById("MID");
-   if(sel.selectedIndex!=-1)
-   {
-      var strMemo="";
-
-      if(sel.options[sel.selectedIndex].text.indexOf("×")==-1)
-      {
-          var strHolder=sel.options[sel.selectedIndex].text.split("|")[1];
-          strHolder=strHolder==undefined?"×":"×"+strHolder;
-          sel.options[sel.selectedIndex].text=sel.options[sel.selectedIndex].text.split("|")[0]+"|"+strHolder;
-
-          $.post("setMemo.php?t=" + Math.random(), { "T": nType,"D":strHolder,"ID":sel.value}, function (data) {
-             if(data=="PRJOK")
-                document.getElementById("MEMOINFO").innerText="已排除此模块："+sel.options[sel.selectedIndex].text.split("|")[0];
-          });
-          document.getElementById("find_prj").focus();
-      }
-      else
-      {
-          var strHolder=sel.options[sel.selectedIndex].text.replace("×","").split("|")[1];
-          strHolder=strHolder==undefined?"":strHolder;
-          sel.options[sel.selectedIndex].text=sel.options[sel.selectedIndex].text.split("|")[0]+"|"+strHolder;
-
-          $.post("setMemo.php?t=" + Math.random(), { "T": nType,"D":strHolder,"ID":sel.value}, function (data) {
-             if(data=="PRJOK")
-                document.getElementById("MEMOINFO").innerText="已恢复此模块："+sel.options[sel.selectedIndex].text.split("|")[0];
-          });
-          document.getElementById("find_gui").focus();
-      }
-   }
-   else
-   {
-      document.getElementById("EXCLUDED").style.visibility="visible";
-      var sel_excluded=document.getElementById("excludedlist");
-      sel_excluded.length=0;
-      for(var i=0;i<sel.length;i++)
-      {
-          if(sel.options[i].text.indexOf("×")>-1)  sel_excluded.add(new Option(sel.options[i].text.split("|")[0],''));
-      }
-      document.getElementById("total").innerText=sel_excluded.length;
-   }
-}
-
-function setPRJStatus()
-{
-   var sel=document.getElementById("MID");
-   if(sel.selectedIndex!=-1)
-   {
-      var strMemo="";
-
-      if(sel.options[sel.selectedIndex].text.indexOf("√")==-1)
-      {
-          var strHolder=sel.options[sel.selectedIndex].text.split("|")[1];
-          strHolder=strHolder==undefined?"√":"√"+strHolder;
-          sel.options[sel.selectedIndex].text=sel.options[sel.selectedIndex].text.split("|")[0]+"|"+strHolder;
-
-          document.getElementById("MEMOINFO").innerText=strHolder;
-          $.post("./setMemo.php?t=" + Math.random(), { "T": nType,"D":strHolder,"ID":sel.value}, function (data) {});
-      }
-   }
-   else
-   {
-      alert("请先选择一条数据。");
-   }
-}
-
-
-function setGUIStatus()
-{
-   var sel=document.getElementById("GUI");
-   if(sel.selectedIndex!=-1)
-   {
-      var strMemo="";
-
-      if(sel.options[sel.selectedIndex].text.indexOf("√")==-1)
-      {
-          var strHolder=sel.options[sel.selectedIndex].text.split("|")[1];
-          strHolder=strHolder==undefined?"√":"√"+strHolder;
-          sel.options[sel.selectedIndex].text=sel.options[sel.selectedIndex].text.split("|")[0]+"|"+strHolder;
-
-          document.getElementById("MEMOINFO").innerText=strHolder;
-          $.post("./setMemo.php?t=" + Math.random(), { "T": nType,"D":strHolder,"ID":sel.selectedIndex}, function (data) {});
-      }
-   }
-   else
-   {
-      alert("请先选择一条数据。");
-   }
-}
-
-
-
-function setPRJMemo()
-{
-   var sel=document.getElementById("MID");
-   if(sel.selectedIndex!=-1)
-   {
-      var strMemo="";
-      var strHolder=sel.options[sel.selectedIndex].text.split("|")[1];
-      if((strMemo=prompt("请输入此条数据的备注信息。",strHolder==undefined?'':strHolder  ))!=null)
-      {
-          if(strMemo!="")
-             sel.options[sel.selectedIndex].text=sel.options[sel.selectedIndex].text.split("|")[0]+"|"+strMemo;
-          else
-             sel.options[sel.selectedIndex].text=sel.options[sel.selectedIndex].text.split("|")[0];
-
-          document.getElementById("MEMOINFO").innerText=strMemo;
-          $.post("./setMemo.php?t=" + Math.random(), { "T": nType,"D":strMemo,"ID":sel.value}, function (data) {});
-      }
-   }
-   else
-   {
-      alert("请先选择一条数据。");
-   }
-}
-
-function setGUIMemo()
-{
-   var sel=document.getElementById("GUI");
-   if(sel.selectedIndex!=-1)
-   {
-      var strMemo="";
-      var strHolder=sel.options[sel.selectedIndex].text.split("|")[1];
-      if((strMemo=prompt("请输入此条数据的备注信息。",strHolder==undefined?'':strHolder  ))!=null)
-      {
-          if(strMemo!="")
-             sel.options[sel.selectedIndex].text=sel.options[sel.selectedIndex].text.split("|")[0]+"|"+strMemo;
-          else
-             sel.options[sel.selectedIndex].text=sel.options[sel.selectedIndex].text.split("|")[0];
-
-          document.getElementById("MEMOINFO").innerText=strMemo;
-          $.post("./setMemo.php?t=" + Math.random(), { "T": nType,"D":strMemo,"ID":sel.selectedIndex}, function (data) {});
-
-      }
-   }
-   else
-   {
-      alert("请先选择一条数据。");
-   }
-}
-
-function setSearchType(n)
-{
-   nType=n;
-}
-
-
-function doSearching_prj(i)
-{
-   var str=i.value;
-   var sel=document.getElementById("MID");
-   if(sel)
-   {
-      for(var i=0;i<sel.options.length;i++)
-
-      {
- 
-        if(sel.options[i].text.toUpperCase().indexOf(str.toUpperCase())>-1)
-         {
-            sel.selectedIndex=i;
-
-            return;
-         }
-      }
-   }
-}
-
-
-function doSearching_prj2()
-{
-   var str=document.getElementById("find_prj").value;
-   var sel=document.getElementById("MID");
-   if(sel)
-   {
-      for(var i=sel.selectedIndex+1;i<sel.options.length;i++)
-
-      {
- 
-        if(sel.options[i].text.toUpperCase().indexOf(str.toUpperCase())>-1)
-         {
-            sel.selectedIndex=i;
-
-            return;
-         }
-      }
-   }
-}
-
-function doSearching_gui(i)
-{
-   var str=i.value;
-   var sel=document.getElementById("GUI");
-   if(sel)
-   {
-      for(var i=0;i<sel.options.length;i++)
-
-      {
- 
-        if(sel.options[i].text.toUpperCase().indexOf(str.toUpperCase())>-1)
-         {
-            sel.selectedIndex=i;
-
-            return;
-         }
-      }
-   }
-}
-
-
-function doSearching_gui2()
-{
-   var str=document.getElementById("find_gui").value;
-   var sel=document.getElementById("GUI");
-   if(sel)
-   {
-      for(var i=sel.selectedIndex+1;i<sel.options.length;i++)
-
-      {
- 
-        if(sel.options[i].text.toUpperCase().indexOf(str.toUpperCase())>-1)
-         {
-            sel.selectedIndex=i;
-
-            return;
-         }
-      }
-   }
-}
-
-function showPROJFile(f)
-{
-   document.getElementById("EXCLUDED").style.visibility="hidden";
-
-   if(bChanged)
-   {
-      if(confirm("当前项目已修改，是否要去保存？")==1)
-      {
-         return;
-      }
-      else bChanged=false;
-   }
-
-
-   if(typeof f =='object') 
-      nID=f.value;
-   else
-   {
-      nID=f;
-   }
-
-
-   nType=1;
-   if(nID==557)
-   {
-      //alert("此文件需要用另一个编辑器处理。");
-      document.getElementById("GUIDIV").style.visibility="visible";
-      //document.getElementById("GUIDIV").style.width=f.offsetWidth;
-      //document.getElementById("GUI").style.width=f.offsetWidth;
-      document.getElementById("find_gui").style.visibility="visible";
-      //document.getElementById("find_gui").style.width=f.offsetWidth-110;
-
-   }
-   else
-   {
-      document.getElementById("GUIDIV").style.visibility="hidden";
-      document.getElementById("find_gui").style.visibility="hidden";
-      document.getElementById("div_code_editor").style.visibility="hidden";
-      $.post("./getFile_proj.php?t=" + Math.random(), { "F": f.value}, function (data) {
-
-         if(data.length>0){
-            document.getElementById("viewer").innerText=data;
-            //hljs.highlightAll();
-         }
-   
-   });
-
-      var sel=document.getElementById("MID");
-      if(sel.selectedIndex!=-1)
-      {
-         var strHolder=sel.options[sel.selectedIndex].text.split("|")[1];
-         document.getElementById("MEMOINFO").innerText=strHolder==undefined?"":strHolder;
-      }
-
-   }
-}
-
-
-
-function showGUIFile(f)
-{
-   document.getElementById("EXCLUDED").style.visibility="hidden";
-
-   if(bChanged)
-   {
-      if(confirm("当前项目已修改，是否要去保存？")==1)
-      {
-         return;
-      }
-      else bChanged=false;
-   }
-
-   nID=f.value;
-   nType=2;
-   if(nID==557)
-   {
-      //alert("此文件需要用另一个编辑器处理。");
-      document.getElementById("GUIDIV").style.visibility="visible";
-      //document.getElementById("find_gui").style.visibility="visible";
-   }
-   else
-   {
-      //document.getElementById("GUIDIV").style.visibility="hidden";
-      document.getElementById("div_code_editor").style.visibility="hidden";
-      $.post("./getFile_gui.php?t=" + Math.random(), { "F": f.value}, function (data) {
-
-         if(data.length>0){
-            document.getElementById("viewer").innerText=data;
-            //hljs.highlightAll();
-         }
-   
-   });
-
-      var sel=document.getElementById("GUI");
-      if(sel.selectedIndex!=-1)
-      {
-         var strHolder=sel.options[sel.selectedIndex].text.split("|")[1];
-         document.getElementById("MEMOINFO").innerText=strHolder==undefined?"":strHolder;
-      }
-   }
-}
-
-
-function editCode(o)
-{
-   var editor=document.getElementById("div_code_editor");
-   editor.style.visibility="visible";
-   var t=document.getElementById("CODE_EDITOR");
-
-   t.value=o.innerText;   
-   editor.style.left=o.parentElement.parentElement.offsetLeft;
-   editor.style.top=o.parentElement.parentElement.offsetTop+13;
-   editor.style.height=t.style.height=o.offsetHeight;
-   editor.style.width=t.style.width=o.offsetWidth;
-
-   if(nType==2) alert("注意，第557号模块里的代码，所有的双引号，要用转义符。\n“\"” 应写成： “\\\"”");
-   //t.focus();
-}
-
-function saveCode(i)
-{
-   //alert(nID+'|'+nType);
-
-   $.post("./saveFile.php?t=" + Math.random(), { "ID":nID,"T":nType,"D": CODE_EDITOR.value}, function (data) {
-
-      if(data.length>0){
-         if(data=="OK")
-         {
-            bChanged=false;
-            document.getElementById("div_code_editor").style.visibility="hidden";
-            document.getElementById("viewer").innerText=document.getElementById("CODE_EDITOR").value;
-         }
-         else alert("保存失败，请重试。"+data);
-      }
-   });
-
-
-
-}
-
-function setChanged()
-{
-   bChanged=true;
-}
-</script>
+</body>
+</html>

@@ -1,0 +1,1 @@
+/* 1497 3d */\n (function(module, exports) {\nmodule.exports =\"./static/assets/1497virtual3dlab000000000.png\";\n })

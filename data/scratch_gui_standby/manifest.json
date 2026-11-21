@@ -1,0 +1,62 @@
+[
+    {
+        "extId": "THISISANEWEXTENSION",
+        "name": "新扩展",
+        "blockedAt": "2026-11-18 13:48",
+        "modules": [
+            1500,
+            1501,
+            1502
+        ],
+        "importModules": [
+            43,
+            44
+        ],
+        "assets": [
+            "THISISANEWEXTENSIONPicture.png",
+            "THISISANEWEXTENSIONSmall.svg"
+        ],
+        "movedAssets": [
+            "THISISANEWEXTENSIONPicture.png",
+            "THISISANEWEXTENSIONSmall.svg"
+        ],
+        "registry954": ",\\n  THISISANEWEXTENSION: function THISISANEWEXTENSION() {\\n    return __webpack_require__(1502);\\n  }",
+        "imports121": "\\n var _THISISANEWEXTENSION_THISISANEWEXTENSION_png__WEBPACK_IMPORTED_MODULE_43__ = __webpack_require__(1500);\\n var _THISISANEWEXTENSION_THISISANEWEXTENSION_png__WEBPACK_IMPORTED_MODULE_43___default = __webpack_require__.n(_THISISANEWEXTENSION_THISISANEWEXTENSION_png__WEBPACK_IMPORTED_MODULE_43__);\\n var _THISISANEWEXTENSION_THISISANEWEXTENSION_small_svg__WEBPACK_IMPORTED_MODULE_44__ = __webpack_require__(1501);\\n var _THISISANEWEXTENSION_THISISANEWEXTENSION_small_svg__WEBPACK_IMPORTED_MODULE_44___default = __webpack_require__.n(_THISISANEWEXTENSION_THISISANEWEXTENSION_small_svg__WEBPACK_IMPORTED_MODULE_44__);\\n",
+        "entry121": "{\\n  name: '新扩展',\\n  extensionId: 'THISISANEWEXTENSION',\\n  iconURL: _THISISANEWEXTENSION_THISISANEWEXTENSION_png__WEBPACK_IMPORTED_MODULE_43___default.a,\\n  insetIconURL: _THISISANEWEXTENSION_THISISANEWEXTENSION_small_svg__WEBPACK_IMPORTED_MODULE_44___default.a,\\n  description: '一个用工具生成的扩展。',\\n  featured: true,\\n  internetConnectionRequired: false,\\n}, ",
+        "remarks": {
+            "1500": "|新扩展扩展背景图",
+            "1501": "|新扩展扩展图标",
+            "1502": "|新扩展扩展定义"
+        }
+    },
+    {
+        "extId": "THISISANEWEXTENSION2",
+        "name": "新扩展2",
+        "blockedAt": "2026-11-18 19:49",
+        "modules": [
+            1500,
+            1501,
+            1502
+        ],
+        "importModules": [
+            43,
+            44
+        ],
+        "assets": [
+            "THISISANEWEXTENSIONPicture.png",
+            "THISISANEWEXTENSIONSmall.svg"
+        ],
+        "movedAssets": [
+            "THISISANEWEXTENSIONPicture.png",
+            "THISISANEWEXTENSIONSmall.svg"
+        ],
+        "registry954": ",\\n  THISISANEWEXTENSION2: function THISISANEWEXTENSION2() {\\n    return __webpack_require__(1502);\\n  }",
+        "imports121": "\\n var _THISISANEWEXTENSION2_THISISANEWEXTENSION2_png__WEBPACK_IMPORTED_MODULE_43__ = __webpack_require__(1500);\\n var _THISISANEWEXTENSION2_THISISANEWEXTENSION2_png__WEBPACK_IMPORTED_MODULE_43___default = __webpack_require__.n(_THISISANEWEXTENSION2_THISISANEWEXTENSION2_png__WEBPACK_IMPORTED_MODULE_43__);\\n var _THISISANEWEXTENSION2_THISISANEWEXTENSION2_small_svg__WEBPACK_IMPORTED_MODULE_44__ = __webpack_require__(1501);\\n var _THISISANEWEXTENSION2_THISISANEWEXTENSION2_small_svg__WEBPACK_IMPORTED_MODULE_44___default = __webpack_require__.n(_THISISANEWEXTENSION2_THISISANEWEXTENSION2_small_svg__WEBPACK_IMPORTED_MODULE_44__);\\n",
+        "entry121": "{\\n  name: '新扩展2',\\n  extensionId: 'THISISANEWEXTENSION2',\\n  iconURL: _THISISANEWEXTENSION2_THISISANEWEXTENSION2_png__WEBPACK_IMPORTED_MODULE_43___default.a,\\n  insetIconURL: _THISISANEWEXTENSION2_THISISANEWEXTENSION2_small_svg__WEBPACK_IMPORTED_MODULE_44___default.a,\\n  description: '一个用工具生成的扩展。',\\n  featured: true,\\n  internetConnectionRequired: false,\\n}, ",
+        "remarks": {
+            "1500": "|新扩展2扩展背景图",
+            "1501": "|新扩展2扩展图标",
+            "1502": "|新扩展2扩展定义"
+        }
+    }
+]

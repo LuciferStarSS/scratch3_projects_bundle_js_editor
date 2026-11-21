@@ -1,0 +1,1 @@
+/* 1501 */\n (function(module, exports) {\nmodule.exports ='./static/assets/THISISANEWEXTENSIONSmall.svg';\n })

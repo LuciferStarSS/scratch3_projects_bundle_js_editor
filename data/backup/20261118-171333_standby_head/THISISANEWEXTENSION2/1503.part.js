@@ -1,0 +1,1 @@
+/* 1503 */\n (function(module, exports) {\nmodule.exports ='./static/assets/THISISANEWEXTENSIONPicture.png';\n })

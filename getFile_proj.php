@@ -11,6 +11,7 @@ if($fid!=="")
       //$str=str_replace('\n',"\r\n",$str);
 
       $str=str_replace('\n',"\n<br>",$str);
+      //$str=str_replace('\n',"\n",$str);
       echo $str;
        
    }
